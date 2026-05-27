@@ -44,3 +44,14 @@ th, td {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+.result-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 25px auto;
+    max-width: 600px;
+}
+
+.result-card a {
+    font-weight: bold;
+}
