@@ -1,152 +1,256 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>1911 Database</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USGI 1911 Database</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: #f5f5f5;
+    }
+
+    header {
+      background-color: #111;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #fff;
+    }
+
+    header p {
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    .search-container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    #searchInput {
+      width: 90%;
+      max-width: 600px;
+      padding: 15px;
+      font-size: 18px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+    }
+
+    .manufacturer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .manufacturer-card {
+      background-color: #222;
+      border: 1px solid #333;
+      border-radius: 10px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .manufacturer-card:hover {
+      background-color: #2d2d2d;
+      transform: translateY(-3px);
+    }
+
+    .manufacturer-card a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .site-footer {
+      background-color: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 50px;
+      border-top: 1px solid #333;
+    }
+
+    .footer-links {
+      margin-bottom: 20px;
+    }
+
+    .footer-links a {
+      color: #ddd;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .footer-copy {
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .bottom-disclaimer {
+      max-width: 1000px;
+      margin: 0 auto;
+      font-size: 11px;
+      line-height: 1.8;
+      color: #777;
+      text-align: left;
+      border-top: 1px solid #222;
+      padding-top: 25px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      .manufacturer-card a {
+        font-size: 18px;
+      }
+
+      #searchInput {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>US Military M1911 & M1911A1 Database</h1>
+  <header>
+    <h1>USGI 1911 Database</h1>
+    <p>Historical Reference & Collector Research Archive</p>
+  </header>
 
-<p>
-Search serial numbers or browse by manufacturer.
-</p>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="colt.html">Colt</a>
-    <a href="ithaca.html">Ithaca</a>
-    <a href="remington-rand.html">Remington Rand</a>
-    <a href="union-switch-signal.html">Union Switch & Signal</a>
-    <a href="singer.html">Singer</a>
-    <a href="inspectors.html">Inspectors</a>
-    <a href="arsenal-rebuilds.html">Arsenal Rebuilds</a>
-    <a href="contracts.html">Contracts</a>
-</nav>
-
-<div class="search-box">
+  <div class="search-container">
     <input
-        type="text"
-        id="searchInput"
-        placeholder="Enter serial number"
+      type="text"
+      id="searchInput"
+      placeholder="Search serial number, manufacturer, inspector, year..."
     >
+  </div>
 
-    <button onclick="searchDatabase()">
-        Search
-    </button>
-</div>
+  <section class="manufacturer-grid">
 
-<div id="result"></div>
+    <div class="manufacturer-card">
+      <a href="colt.html">Colt</a>
+    </div>
 
-<h2>Quick Browse Manufacturers</h2>
+    <div class="manufacturer-card">
+      <a href="ithaca.html">Ithaca</a>
+    </div>
 
-<div class="manufacturer-grid">
+    <div class="manufacturer-card">
+      <a href="remington_rand.html">Remington Rand</a>
+    </div>
 
-    <a class="manufacturer-card" href="colt.html">
-        <h3>Colt</h3>
-        <p>Browse Colt serial ranges</p>
-    </a>
+    <div class="manufacturer-card">
+      <a href="union_switch_signal.html">Union Switch & Signal</a>
+    </div>
 
-    <a class="manufacturer-card" href="ithaca.html">
-        <h3>Ithaca</h3>
-        <p>Browse Ithaca serial ranges</p>
-    </a>
+    <div class="manufacturer-card">
+      <a href="singer.html">Singer</a>
+    </div>
 
-    <a class="manufacturer-card" href="remington-rand.html">
-        <h3>Remington Rand</h3>
-        <p>Browse Remington Rand serial ranges</p>
-    </a>
+  </section>
 
-    <a class="manufacturer-card" href="union-switch-signal.html">
-        <h3>Union Switch & Signal</h3>
-        <p>Browse US&S serial ranges</p>
-    </a>
+  <footer class="site-footer">
 
-    <a class="manufacturer-card" href="singer.html">
-        <h3>Singer</h3>
-        <p>Browse Singer contract pistols</p>
-    </a>
+    <div class="footer-links">
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="copyright.html">Copyright / DMCA</a>
+      <a href="contact.html">Contact</a>
+    </div>
 
-</div>
+    <p class="footer-copy">
+      © 2026 USGI 1911 Database. All Rights Reserved.
+    </p>
 
-<footer>
-    <p>U.S. Military M1911 & M1911A1 Database</p>
-    <p>Historical collector reference only.</p>
-</footer>
+    <div class="bottom-disclaimer">
 
-<script src="./data.js"></script>
+      <strong>Disclaimer:</strong><br><br>
 
-<script>
-function getManufacturerPage(manufacturer) {
-    if (manufacturer === "Colt") return "colt.html";
-    if (manufacturer === "Ithaca") return "ithaca.html";
-    if (manufacturer === "Remington Rand") return "remington-rand.html";
-    if (manufacturer === "Union Switch & Signal") return "union-switch-signal.html";
-    if (manufacturer === "Singer") return "singer.html";
-    return "index.html";
-}
+      This website is provided for historical, educational, and collector
+      reference purposes only. While every effort is made to ensure the
+      accuracy of serial number information, production estimates,
+      manufacturer data, inspection marks, photographs, and historical
+      details, errors or omissions may exist. Information presented on
+      this site is not guaranteed to be complete, current, or accurate.
 
-function searchDatabase() {
-    var input = document
-        .getElementById("searchInput")
-        .value
-        .trim()
-        .toUpperCase();
+      <br><br>
 
-    var result = document.getElementById("result");
-    result.innerHTML = "";
+      The identification, originality, authenticity, condition, or value
+      of any firearm should always be independently verified by qualified
+      experts, collectors, historians, auction houses, or licensed
+      appraisers before any purchase, sale, trade, restoration, or
+      appraisal decision is made.
 
-    for (var i = 0; i < pistols.length; i++) {
-        var p = pistols[i];
+      <br><br>
 
-        if (!isNaN(input)) {
-            var serial = Number(input);
+      This website does not provide legal advice, firearms compliance
+      advice, gunsmithing services, or professional appraisals. Users are
+      solely responsible for complying with all applicable local, state,
+      federal, and international laws regarding firearm ownership,
+      transfer, possession, import/export, storage, and use.
 
-            if (serial >= p.serial_start && serial <= p.serial_end) {
-                var page = getManufacturerPage(p.manufacturer);
+      <br><br>
 
-                result.innerHTML =
-                    "<div class='result-card'>" +
-                    "<h2>Result Found</h2>" +
-                    "<p><strong>Manufacturer:</strong> " + p.manufacturer + "</p>" +
-                    "<p><strong>Year:</strong> " + p.year + "</p>" +
-                    "<p><strong>Range:</strong> " + p.serial_start + " - " + p.serial_end + "</p>" +
-                    "<p><strong>Notes:</strong> " + p.notes + "</p>" +
-                    "<p><a href='" + page + "'>View " + p.manufacturer + " Page →</a></p>" +
-                    "<p><a href='pistols/" + input + ".html'>View Individual Pistol Page →</a></p>" +
-                    "</div>";
+      Any values, rarity estimates, historical interpretations, or
+      production data presented on this site are opinions and
+      research-based estimates only and should not be considered
+      authoritative or guaranteed.
 
-                return;
-            }
-        }
+      <br><br>
 
-        if (isNaN(input)) {
-            if (input >= p.serial_start && input <= p.serial_end) {
-                var page = getManufacturerPage(p.manufacturer);
+      User-submitted content, photographs, serial numbers, and historical
+      data are the responsibility of their respective contributors. This
+      website does not guarantee the authenticity or accuracy of submitted
+      materials.
 
-                result.innerHTML =
-                    "<div class='result-card'>" +
-                    "<h2>Result Found</h2>" +
-                    "<p><strong>Manufacturer:</strong> " + p.manufacturer + "</p>" +
-                    "<p><strong>Year:</strong> " + p.year + "</p>" +
-                    "<p><strong>Range:</strong> " + p.serial_start + " - " + p.serial_end + "</p>" +
-                    "<p><strong>Notes:</strong> " + p.notes + "</p>" +
-                    "<p><a href='" + page + "'>View " + p.manufacturer + " Page →</a></p>" +
-                    "<p><a href='pistols/" + input + ".html'>View Individual Pistol Page →</a></p>" +
-                    "</div>";
+      <br><br>
 
-                return;
-            }
-        }
-    }
+      This website is an independent historical reference project and is
+      not affiliated with, endorsed by, or connected to Colt, Ithaca,
+      Remington Rand, Union Switch & Signal, Singer, Springfield Armory,
+      CMP, the United States Government, the Department of Defense, or
+      any firearm manufacturer, organization, or military entity.
 
-    result.innerHTML = "<p>No matching serial range found.</p>";
-}
-</script>
+      <br><br>
+
+      All trademarks, company names, and product names remain the property
+      of their respective owners.
+
+      <br><br>
+
+      By using this website, you acknowledge and agree that the owners,
+      contributors, and operators of this site shall not be held liable
+      for any loss, damage, legal issue, financial decision, collecting
+      decision, or other consequence arising from the use of information
+      contained on this website.
+
+    </div>
+
+  </footer>
 
 </body>
-    This website is provided for historical and collector reference purposes only. While every effort is made to ensure accuracy, errors and omissions may exist. Serial number information, production estimates, and identification guidance are not guaranteed. Users should independently verify all firearm information before making purchasing, collecting, or appraisal decisions.
-
 </html>
