@@ -202,177 +202,108 @@
 
 </footer>
 
-<script src="./data.js?v=8"></script>
+<script src="./data.js?v=10"></script>
 
 <script>
-
 function getManufacturerPage(manufacturer) {
-
-    if (manufacturer === "Colt") {
-        return "colt.html";
-    }
-
-    if (manufacturer === "Springfield Armory") {
-        return "springfield.html";
-    }
-
-    if (manufacturer === "Ithaca") {
-        return "ithaca.html";
-    }
-
-    if (manufacturer === "Remington Rand") {
-        return "remington-rand.html";
-    }
-
-    if (manufacturer === "Union Switch & Signal") {
-        return "union-switch-signal.html";
-    }
-
-    if (manufacturer === "Singer") {
-        return "singer.html";
-    }
-
+    if (manufacturer === "Colt") return "colt.html";
+    if (manufacturer === "Springfield Armory") return "springfield.html";
+    if (manufacturer === "Ithaca") return "ithaca.html";
+    if (manufacturer === "Remington Rand") return "remington-rand.html";
+    if (manufacturer === "Union Switch & Signal") return "union-switch-signal.html";
+    if (manufacturer === "Singer") return "singer.html";
     return "index.html";
 }
 
-function showResult(input, pistol) {
-
-    var result = document.getElementById("result");
-
-    var manufacturerPage =
-        getManufacturerPage(pistol.manufacturer);
-
-    result.innerHTML =
-
-        "<div class='result-card'>" +
-
-        "<h2>Result Found</h2>" +
-
-        "<p><strong>Manufacturer:</strong> " +
-        pistol.manufacturer +
-        "</p>" +
-
-        "<p><strong>Year:</strong> " +
-        pistol.year +
-        "</p>" +
-
-        "<p><strong>Range:</strong> " +
-        pistol.serial_start +
-        " - " +
-        pistol.serial_end +
-        "</p>" +
-
-        "<p><strong>Notes:</strong> " +
-        pistol.notes +
-        "</p>" +
-
-        "<p>" +
-        "<a href='" + manufacturerPage + "'>" +
-        "View " +
-        pistol.manufacturer +
-        " Page →" +
-        "</a>" +
-        "</p>" +
-
-        "<p>" +
-        "<a href='pistols/" + input + ".html'>" +
-"View Individual Pistol Page →" +
-"</a>" +
-        "</p>" +
-
-        "</div>";
-}
-
 function searchDatabase() {
-
-    var input =
-        document.getElementById("searchInput")
-        .value
-        .trim()
-        .toUpperCase();
-
-    var result =
-        document.getElementById("result");
+    var input = document.getElementById("searchInput").value.trim().toUpperCase();
+    var result = document.getElementById("result");
 
     result.innerHTML = "";
 
     if (input === "") {
-
-        result.innerHTML =
-            "<p>Please enter a serial number.</p>";
-
+        result.innerHTML = "<p>Please enter a serial number.</p>";
         return;
     }
 
     var matches = [];
 
     for (var i = 0; i < pistols.length; i++) {
-
         var pistol = pistols[i];
 
-        /* NUMERIC SERIALS */
-
         if (!isNaN(input)) {
-
             var serial = Number(input);
 
             if (
                 serial >= Number(pistol.serial_start) &&
                 serial <= Number(pistol.serial_end)
             ) {
-
                 matches.push(pistol);
             }
-        }
+        } else {
+            var start = String(pistol.serial_start).toUpperCase();
+            var end = String(pistol.serial_end).toUpperCase();
 
-        /* LETTER PREFIX SERIALS */
-
-        else {
-
-            var start =
-                String(pistol.serial_start)
-                .toUpperCase();
-
-            var end =
-                String(pistol.serial_end)
-                .toUpperCase();
-
-            if (
-                input >= start &&
-                input <= end
-            ) {
-
+            if (input >= start && input <= end) {
                 matches.push(pistol);
             }
         }
     }
 
     if (matches.length === 0) {
-
-        result.innerHTML =
-            "<p>No matching serial range found.</p>";
-
+        result.innerHTML = "<p>No matching serial range found.</p>";
         return;
     }
 
-    /* PICK SMALLEST MATCHING RANGE */
-
-    matches.sort(function(a, b) {
-
-        var aSize =
-            Number(a.serial_end) -
-            Number(a.serial_start);
-
-        var bSize =
-            Number(b.serial_end) -
-            Number(b.serial_start);
-
-        return aSize - bSize;
-    });
-
-    showResult(input, matches[0]);
+    showAllResults(input, matches);
 }
 
+function showAllResults(input, matches) {
+    var result = document.getElementById("result");
+
+    var html = "<div class='result-card'>";
+
+    if (matches.length > 1) {
+        html += "<h2>Multiple Possible Matches Found</h2>";
+        html += "<div class='warning-box'>";
+        html += "WARNING: This serial number falls within an overlapping or duplicate serial range. Verify using inspector marks, slide markings, frame markings, finish, and ordnance stamps.";
+        html += "</div>";
+    } else {
+        html += "<h2>Result Found</h2>";
+    }
+
+    html += "<table>";
+    html += "<tr>";
+    html += "<th>Manufacturer</th>";
+    html += "<th>Year</th>";
+    html += "<th>Range</th>";
+    html += "<th>Notes</th>";
+    html += "<th>Page</th>";
+    html += "</tr>";
+
+    for (var i = 0; i < matches.length; i++) {
+        var pistol = matches[i];
+        var page = getManufacturerPage(pistol.manufacturer);
+
+        html += "<tr>";
+        html += "<td>" + pistol.manufacturer + "</td>";
+        html += "<td>" + pistol.year + "</td>";
+        html += "<td>" + pistol.serial_start + " - " + pistol.serial_end + "</td>";
+        html += "<td>" + pistol.notes + "</td>";
+        html += "<td><a href='" + page + "'>Open</a></td>";
+        html += "</tr>";
+    }
+
+    html += "</table>";
+
+    html += "<p>";
+    html += "<a href='pistols/" + input + ".html'>View Individual Pistol Page →</a>";
+    html += "</p>";
+
+    html += "</div>";
+
+    result.innerHTML = html;
+}
 </script>
 </body>
 
