@@ -68,10 +68,82 @@ var pistols = [
 
 {
     manufacturer: "Colt",
-    year: "1937-1945",
+    year: "1937",
     serial_start: 710001,
-    serial_end: 2380013,
+    serial_end: 712349,
+    notes: "Pre-WWII Colt production"
+},
+
+{
+    manufacturer: "Colt",
+    year: "1938",
+    serial_start: 712350,
+    serial_end: 713645,
+    notes: "Pre-WWII Colt production"
+},
+
+{
+    manufacturer: "Colt",
+    year: "1939",
+    serial_start: 713646,
+    serial_end: 717281,
+    notes: "Pre-WWII Colt production"
+},
+
+{
+    manufacturer: "Colt",
+    year: "1940",
+    serial_start: 717282,
+    serial_end: 721977,
+    notes: "Pre-WWII Colt production"
+},
+
+{
+    manufacturer: "Colt",
+    year: "1941",
+    serial_start: 721978,
+    serial_end: 756733,
+    notes: "Early WWII Colt production"
+},
+
+{
+    manufacturer: "Colt",
+    year: "1942",
+    serial_start: 756734,
+    serial_end: 800000,
     notes: "WWII Colt production"
+},
+
+{
+    manufacturer: "Colt",
+    year: "1942",
+    serial_start: 800501,
+    serial_end: 856100,
+    notes: "WWII Colt production"
+},
+
+{
+    manufacturer: "Colt",
+    year: "1943",
+    serial_start: 1096405,
+    serial_end: 1208673,
+    notes: "WWII Colt production"
+},
+
+{
+    manufacturer: "Colt",
+    year: "1944",
+    serial_start: 1609529,
+    serial_end: 1743846,
+    notes: "WWII Colt production"
+},
+
+{
+    manufacturer: "Colt",
+    year: "1945",
+    serial_start: 2244804,
+    serial_end: 2380013,
+    notes: "Late WWII Colt production"
 },
 
 /* SPRINGFIELD ARMORY */
@@ -182,6 +254,26 @@ var pistols = [
     serial_start: 2380014,
     serial_end: 2619013,
     notes: "Final Remington Rand WWII production"
+},
+
+/* UNION SWITCH & SIGNAL */
+
+{
+    manufacturer: "Union Switch & Signal",
+    year: "1943",
+    serial_start: 1041405,
+    serial_end: 1096404,
+    notes: "US&S WWII production"
+},
+
+/* SINGER */
+
+{
+    manufacturer: "Singer",
+    year: "1942",
+    serial_start: "S800001",
+    serial_end: "S800500",
+    notes: "Singer contract pistols"
 }
 
 ];
