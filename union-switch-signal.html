@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Union Switch & Signal 1911 Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Union Switch & Signal M1911A1 Serial Number Ranges</h1>
+
+<p>
+Complete Union Switch & Signal production serial number ranges.
+</p>
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="colt.html">Colt</a>
+
+    <a href="ithaca.html">Ithaca</a>
+
+    <a href="remington-rand.html">Remington Rand</a>
+
+    <a href="union-switch-signal.html">
+        Union Switch & Signal
+    </a>
+
+</nav>
+
+<table>
+
+    <thead>
+
+        <tr>
+            <th>Year</th>
+            <th>Serial Start</th>
+            <th>Serial End</th>
+            <th>Notes</th>
+        </tr>
+
+    </thead>
+
+    <tbody id="ussTable"></tbody>
+
+</table>
+
+<script src="union-switch-signal-data.js"></script>
+
+<script>
+
+const table = document.getElementById("ussTable");
+
+ussData.forEach(function(pistol) {
+
+    table.innerHTML += `
+
+        <tr>
+            <td>${pistol.year}</td>
+            <td>${pistol.serial_start}</td>
+            <td>${pistol.serial_end}</td>
+            <td>${pistol.notes}</td>
+        </tr>
+
+    `;
+
+});
+
+</script>
+
+</body>
+</html>
