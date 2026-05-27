@@ -78,4 +78,73 @@ if (!serial) {
     if (!pistol) {
         detail.innerHTML = "<p>No matching serial range found for " + serial + ".</p>";
     } else {
-        const page = getManufacturerPage(pistol.manufacturer
+        const page = getManufacturerPage(pistol.manufacturer);
+
+        detail.innerHTML = `
+            <div class="result-card">
+                <h2>Serial Number ${serial.toUpperCase()}</h2>
+
+                <table>
+                    <tr>
+                        <th>Field</th>
+                        <th>Information</th>
+                    </tr>
+
+                    <tr>
+                        <td>Serial Number</td>
+                        <td>${serial.toUpperCase()}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Manufacturer</td>
+                        <td>${pistol.manufacturer}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Year</td>
+                        <td>${pistol.year}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Serial Range</td>
+                        <td>${pistol.serial_start} – ${pistol.serial_end}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Notes</td>
+                        <td>${pistol.notes}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Photos</td>
+                        <td>Photos can be added later.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Markings</td>
+                        <td>Markings can be documented later.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Inspector</td>
+                        <td>Inspector data can be added later.</td>
+                    </tr>
+
+                    <tr>
+                        <td>Originality Notes</td>
+                        <td>Originality and rebuild information can be added later.</td>
+                    </tr>
+                </table>
+
+                <p>
+                    <a href="${page}">View ${pistol.manufacturer} Page →</a>
+                </p>
+            </div>
+        `;
+    }
+}
+</script>
+
+</body>
+
+</html>
