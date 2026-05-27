@@ -202,7 +202,7 @@
 
 </footer>
 
-<script src="./data.js?v=5"></script>
+<script src="./data.js?v=8"></script>
 
 <script>
 
@@ -210,6 +210,10 @@ function getManufacturerPage(manufacturer) {
 
     if (manufacturer === "Colt") {
         return "colt.html";
+    }
+
+    if (manufacturer === "Springfield Armory") {
+        return "springfield.html";
     }
 
     if (manufacturer === "Ithaca") {
@@ -271,8 +275,8 @@ function showResult(input, pistol) {
         "</p>" +
 
         "<p>" +
-        "<a href='pistols/" + input + ".html'>" +
-        "View Individual Pistol Page →" +
+        "<a href='pistol.html?serial=" + input + "'>" +
+        "View Dynamic Pistol Page →" +
         "</a>" +
         "</p>" +
 
@@ -300,9 +304,13 @@ function searchDatabase() {
         return;
     }
 
+    var matches = [];
+
     for (var i = 0; i < pistols.length; i++) {
 
         var pistol = pistols[i];
+
+        /* NUMERIC SERIALS */
 
         if (!isNaN(input)) {
 
@@ -313,11 +321,11 @@ function searchDatabase() {
                 serial <= Number(pistol.serial_end)
             ) {
 
-                showResult(input, pistol);
-
-                return;
+                matches.push(pistol);
             }
         }
+
+        /* LETTER PREFIX SERIALS */
 
         else {
 
@@ -334,19 +342,38 @@ function searchDatabase() {
                 input <= end
             ) {
 
-                showResult(input, pistol);
-
-                return;
+                matches.push(pistol);
             }
         }
     }
 
-    result.innerHTML =
-        "<p>No matching serial range found.</p>";
+    if (matches.length === 0) {
+
+        result.innerHTML =
+            "<p>No matching serial range found.</p>";
+
+        return;
+    }
+
+    /* PICK SMALLEST MATCHING RANGE */
+
+    matches.sort(function(a, b) {
+
+        var aSize =
+            Number(a.serial_end) -
+            Number(a.serial_start);
+
+        var bSize =
+            Number(b.serial_end) -
+            Number(b.serial_start);
+
+        return aSize - bSize;
+    });
+
+    showResult(input, matches[0]);
 }
 
 </script>
-
 </body>
 
 </html>
