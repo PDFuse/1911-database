@@ -1,22 +1,116 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>1911 Database</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1>US Military 1911 Serial Number Database</h1>
+<h1>US Military M1911 & M1911A1 Database</h1>
 
-<p>Enter a serial number below.</p>
+<p>
+Search serial numbers or browse by manufacturer.
+</p>
 
-<input id="searchInput" type="text" placeholder="Example: 2335201">
-<button onclick="searchDatabase()">Search</button>
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="colt.html">Colt</a>
+
+    <a href="ithaca.html">Ithaca</a>
+
+    <a href="remington-rand.html">Remington Rand</a>
+
+    <a href="union-switch-signal.html">
+        Union Switch & Signal
+    </a>
+
+    <a href="singer.html">Singer</a>
+
+</nav>
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Enter serial number"
+    >
+
+    <button onclick="searchDatabase()">
+        Search
+    </button>
+
+</div>
 
 <div id="result"></div>
+
+<h2>Manufacturer Pages</h2>
+
+<table>
+
+    <thead>
+
+        <tr>
+            <th>Manufacturer</th>
+            <th>Description</th>
+            <th>Link</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>Colt</td>
+            <td>Complete Colt serial number ranges</td>
+            <td>
+                <a href="colt.html">Open</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Ithaca</td>
+            <td>Ithaca production serial ranges</td>
+            <td>
+                <a href="ithaca.html">Open</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Remington Rand</td>
+            <td>Remington Rand serial ranges</td>
+            <td>
+                <a href="remington-rand.html">Open</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Union Switch & Signal</td>
+            <td>US&S production serial ranges</td>
+            <td>
+                <a href="union-switch-signal.html">Open</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Singer</td>
+            <td>Singer contract pistols</td>
+            <td>
+                <a href="singer.html">Open</a>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
 
 <script src="data.js"></script>
 <script src="script.js"></script>
 
 </body>
+
 </html>
