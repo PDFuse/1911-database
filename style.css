@@ -1,27 +1,137 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 30px;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>1911 Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-h1, p {
-    text-align: center;
-}
+<body>
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    margin-top: 30px;
-}
+<h1>US Military 1911 & 1911A1 Database</h1>
 
-th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: left;
-}
+<p>
+Collector reference database organized by manufacturer.
+</p>
 
-th {
-    background-color: #222;
-    color: white;
-}
+<!-- COLT -->
+
+<h2>Colt</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Serial Number</th>
+            <th>Year</th>
+            <th>Model</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>2335201</td>
+            <td>1945</td>
+            <td>M1911A1</td>
+            <td>Late WWII production</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- ITHACA -->
+
+<h2>Ithaca</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Serial Number</th>
+            <th>Year</th>
+            <th>Model</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>2121722</td>
+            <td>1945</td>
+            <td>M1911A1</td>
+            <td>WWII production range</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- REMINGTON RAND -->
+
+<h2>Remington Rand</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Serial Number</th>
+            <th>Year</th>
+            <th>Model</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Add serial</td>
+            <td>Add year</td>
+            <td>M1911A1</td>
+            <td>Add notes</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- UNION SWITCH & SIGNAL -->
+
+<h2>Union Switch & Signal</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Serial Number</th>
+            <th>Year</th>
+            <th>Model</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Add serial</td>
+            <td>Add year</td>
+            <td>M1911A1</td>
+            <td>Add notes</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- SINGER -->
+
+<h2>Singer</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Serial Number</th>
+            <th>Year</th>
+            <th>Model</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Add serial</td>
+            <td>Add year</td>
+            <td>M1911A1</td>
+            <td>Add notes</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
