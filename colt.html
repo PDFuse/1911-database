@@ -7,29 +7,53 @@
 
 <body>
 
-<h1>Colt 1911 & 1911A1 Database</h1>
+<h1>Colt M1911 & M1911A1 Serial Number Ranges</h1>
 
-<p>Collector reference table for Colt manufactured pistols.</p>
+<p>
+Complete Colt production serial number ranges.
+</p>
 
-<a href="index.html">← Back to Home</a>
+<nav>
+    <a href="index.html">Home</a>
+</nav>
 
 <table>
 
-    <tr>
-        <th>Serial Number</th>
-        <th>Year</th>
-        <th>Model</th>
-        <th>Notes</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>Year</th>
+            <th>Serial Start</th>
+            <th>Serial End</th>
+            <th>Notes</th>
+        </tr>
+    </thead>
 
-    <tr>
-        <td>2335201</td>
-        <td>1945</td>
-        <td>M1911A1</td>
-        <td>Late WWII production</td>
-    </tr>
+    <tbody id="coltTable"></tbody>
 
 </table>
+
+<script src="colt-data.js"></script>
+
+<script>
+
+const table = document.getElementById("coltTable");
+
+coltData.forEach(function(pistol) {
+
+    table.innerHTML += `
+
+        <tr>
+            <td>${pistol.year}</td>
+            <td>${pistol.serial_start}</td>
+            <td>${pistol.serial_end}</td>
+            <td>${pistol.notes}</td>
+        </tr>
+
+    `;
+
+});
+
+</script>
 
 </body>
 </html>
