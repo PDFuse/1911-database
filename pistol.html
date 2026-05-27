@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>1911 Pistol Detail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Individual Pistol Detail</h1>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="colt.html">Colt</a>
+    <a href="ithaca.html">Ithaca</a>
+    <a href="remington-rand.html">Remington Rand</a>
+    <a href="union-switch-signal.html">Union Switch & Signal</a>
+    <a href="singer.html">Singer</a>
+</nav>
+
+<div id="pistolDetail"></div>
+
+<footer>
+    <p>U.S. Military M1911 & M1911A1 Database</p>
+    <p>Historical collector reference only.</p>
+</footer>
+
+<script src="./data.js"></script>
+
+<script>
+function getSerialFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("serial");
+}
+
+function getManufacturerPage(manufacturer) {
+    if (manufacturer === "Colt") return "colt.html";
+    if (manufacturer === "Ithaca") return "ithaca.html";
+    if (manufacturer === "Remington Rand") return "remington-rand.html";
+    if (manufacturer === "Union Switch & Signal") return "union-switch-signal.html";
+    if (manufacturer === "Singer") return "singer.html";
+    return "index.html";
+}
+
+function findPistol(serialInput) {
+    const input = serialInput.trim().toUpperCase();
+
+    for (let i = 0; i < pistols.length; i++) {
+        const p = pistols[i];
+
+        if (!isNaN(input)) {
+            const serial = Number(input);
+
+            if (serial >= p.serial_start && serial <= p.serial_end) {
+                return p;
+            }
+        }
+
+        if (isNaN(input)) {
+            if (input >= p.serial_start && input <= p.serial_end) {
+                return p;
+            }
+        }
+    }
+
+    return null;
+}
+
+const serial = getSerialFromUrl();
+const detail = document.getElementById("pistolDetail");
+
+if (!serial) {
+    detail.innerHTML = "<p>No serial number provided.</p>";
+} else {
+    const pistol = findPistol(serial);
+
+    if (!pistol) {
+        detail.innerHTML = "<p>No matching serial range found for " + serial + ".</p>";
+    } else {
+        const page = getManufacturerPage(pistol.manufacturer
