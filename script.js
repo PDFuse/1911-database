@@ -1,50 +1,38 @@
 function searchDatabase() {
-    const input = document.getElementById("searchInput").value.trim().toUpperCase();
-    const resultDiv = document.getElementById("result");
+    var input = document.getElementById("searchInput").value.trim().toUpperCase();
+    var result = document.getElementById("result");
 
-    resultDiv.innerHTML = "";
+    result.innerHTML = "";
 
-    if (!input) {
-        resultDiv.innerHTML = "<p>Enter a serial number to search.</p>";
-        return;
-    }
+    for (var i = 0; i < pistols.length; i++) {
+        var p = pistols[i];
 
-    let match = null;
+        if (!isNaN(input)) {
+            var serial = Number(input);
 
-    for (let pistol of pistols) {
-        const start = String(pistol.serial_start).toUpperCase();
-        const end = String(pistol.serial_end).toUpperCase();
-
-        // For normal numeric serial numbers
-        if (!isNaN(input) && !isNaN(start) && !isNaN(end)) {
-            const numInput = Number(input);
-            const numStart = Number(start);
-            const numEnd = Number(end);
-
-            if (numInput >= numStart && numInput <= numEnd) {
-                match = pistol;
-                break;
+            if (serial >= p.serial_start && serial <= p.serial_end) {
+                result.innerHTML =
+                    "<h2>Result Found</h2>" +
+                    "<p><strong>Manufacturer:</strong> " + p.manufacturer + "</p>" +
+                    "<p><strong>Year:</strong> " + p.year + "</p>" +
+                    "<p><strong>Range:</strong> " + p.serial_start + " - " + p.serial_end + "</p>" +
+                    "<p><strong>Notes:</strong> " + p.notes + "</p>";
+                return;
             }
         }
 
-        // For letter-prefix serials like Singer S800001
-        if (isNaN(input) && input >= start && input <= end) {
-            match = pistol;
-            break;
+        if (isNaN(input)) {
+            if (input >= p.serial_start && input <= p.serial_end) {
+                result.innerHTML =
+                    "<h2>Result Found</h2>" +
+                    "<p><strong>Manufacturer:</strong> " + p.manufacturer + "</p>" +
+                    "<p><strong>Year:</strong> " + p.year + "</p>" +
+                    "<p><strong>Range:</strong> " + p.serial_start + " - " + p.serial_end + "</p>" +
+                    "<p><strong>Notes:</strong> " + p.notes + "</p>";
+                return;
+            }
         }
     }
 
-    if (match) {
-        resultDiv.innerHTML = `
-            <div class="result-card">
-                <h2>Result Found</h2>
-                <p><strong>Manufacturer:</strong> ${match.manufacturer}</p>
-                <p><strong>Year:</strong> ${match.year}</p>
-                <p><strong>Serial Range:</strong> ${match.serial_start} - ${match.serial_end}</p>
-                <p><strong>Notes:</strong> ${match.notes}</p>
-            </div>
-        `;
-    } else {
-        resultDiv.innerHTML = "<p>No matching serial range found.</p>";
-    }
+    result.innerHTML = "<p>No matching serial range found.</p>";
 }
