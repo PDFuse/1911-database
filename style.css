@@ -1,141 +1,46 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>1911 Database</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
 
-<body>
+h1 {
+    text-align: center;
+}
 
-<h1>US Military 1911 & 1911A1 Database</h1>
+p {
+    text-align: center;
+    margin-bottom: 40px;
+}
 
-<p>Collector reference tables organized by manufacturer.</p>
+section {
+    margin-bottom: 50px;
+}
 
-<!-- COLT -->
+h2 {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+}
 
-<section>
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
 
-<h2>Colt</h2>
+th {
+    background-color: #444;
+    color: white;
+}
 
-<table>
-    <tr>
-        <th>Serial Number</th>
-        <th>Year</th>
-        <th>Model</th>
-        <th>Notes</th>
-    </tr>
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
 
-    <tr>
-        <td>2335201</td>
-        <td>1945</td>
-        <td>M1911A1</td>
-        <td>Late WWII production</td>
-    </tr>
-
-</table>
-
-</section>
-
-<!-- ITHACA -->
-
-<section>
-
-<h2>Ithaca</h2>
-
-<table>
-    <tr>
-        <th>Serial Number</th>
-        <th>Year</th>
-        <th>Model</th>
-        <th>Notes</th>
-    </tr>
-
-    <tr>
-        <td>2121722</td>
-        <td>1945</td>
-        <td>M1911A1</td>
-        <td>WWII production range</td>
-    </tr>
-
-</table>
-
-</section>
-
-<!-- REMINGTON RAND -->
-
-<section>
-
-<h2>Remington Rand</h2>
-
-<table>
-    <tr>
-        <th>Serial Number</th>
-        <th>Year</th>
-        <th>Model</th>
-        <th>Notes</th>
-    </tr>
-
-    <tr>
-        <td>Add Serial</td>
-        <td>Year</td>
-        <td>M1911A1</td>
-        <td>Notes</td>
-    </tr>
-
-</table>
-
-</section>
-
-<!-- UNION SWITCH & SIGNAL -->
-
-<section>
-
-<h2>Union Switch & Signal</h2>
-
-<table>
-    <tr>
-        <th>Serial Number</th>
-        <th>Year</th>
-        <th>Model</th>
-        <th>Notes</th>
-    </tr>
-
-    <tr>
-        <td>Add Serial</td>
-        <td>Year</td>
-        <td>M1911A1</td>
-        <td>Notes</td>
-    </tr>
-
-</table>
-
-</section>
-
-<!-- SINGER -->
-
-<section>
-
-<h2>Singer</h2>
-
-<table>
-    <tr>
-        <th>Serial Number</th>
-        <th>Year</th>
-        <th>Model</th>
-        <th>Notes</th>
-    </tr>
-
-    <tr>
-        <td>Add Serial</td>
-        <td>Year</td>
-        <td>M1911A1</td>
-        <td>Notes</td>
-    </tr>
-
-</table>
-
-</section>
-
-</body>
-</html>
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
