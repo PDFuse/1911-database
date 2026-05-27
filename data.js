@@ -171,7 +171,7 @@ var pistols = [
     year: "1943",
     serial_start: 856405,
     serial_end: 916404,
-    notes: "Early Ithaca WWII production"
+    notes: "Duplicate Ithaca serial range. Verify authenticity with F.J.A. inspection mark"
 },
 {
     manufacturer: "Ithaca",
