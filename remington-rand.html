@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Remington Rand 1911 Database</title>
+
+    <title>Remington Rand M1911A1 Serial Numbers</title>
+
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<h1>Remington Rand M1911A1 Serial Number Ranges</h1>
+<h1>Remington Rand M1911A1 Reference</h1>
 
 <p>
-Complete Remington Rand production serial number ranges.
+    Remington Rand was the largest producer of U.S.
+    military M1911A1 pistols during World War II.
 </p>
 
 <nav>
@@ -19,11 +24,29 @@ Complete Remington Rand production serial number ranges.
 
     <a href="colt.html">Colt</a>
 
+    <a href="springfield.html">Springfield Armory</a>
+
     <a href="ithaca.html">Ithaca</a>
 
     <a href="remington-rand.html">Remington Rand</a>
 
+    <a href="union-switch-signal.html">
+        Union Switch & Signal
+    </a>
+
+    <a href="singer.html">Singer</a>
+
+    <a href="inspectors.html">Inspectors</a>
+
+    <a href="arsenal-rebuilds.html">
+        Arsenal Rebuilds
+    </a>
+
+    <a href="contracts.html">Contracts</a>
+
 </nav>
+
+<h2>Remington Rand Serial Number Ranges</h2>
 
 <table>
 
@@ -31,43 +54,159 @@ Complete Remington Rand production serial number ranges.
 
         <tr>
             <th>Year</th>
-            <th>Serial Start</th>
-            <th>Serial End</th>
+            <th>Serial Range</th>
             <th>Notes</th>
         </tr>
 
     </thead>
 
-    <tbody id="rrTable"></tbody>
+    <tbody>
+
+        <tr>
+            <td>1943</td>
+            <td>916405 – 1041404</td>
+            <td>Early Remington Rand WWII production</td>
+        </tr>
+
+        <tr>
+            <td>1943</td>
+            <td>1279699 – 1441430</td>
+            <td>Remington Rand WWII production</td>
+        </tr>
+
+        <tr>
+            <td>1943</td>
+            <td>1471431 – 1609528</td>
+            <td>Remington Rand WWII production</td>
+        </tr>
+
+        <tr>
+            <td>1944</td>
+            <td>1890504 – 2075103</td>
+            <td>Remington Rand WWII production</td>
+        </tr>
+
+        <tr>
+            <td>1945</td>
+            <td>2134404 – 2244803</td>
+            <td>Late Remington Rand WWII production</td>
+        </tr>
+
+        <tr>
+            <td>1945</td>
+            <td>2380014 – 2619013</td>
+            <td>Final Remington Rand WWII production</td>
+        </tr>
+
+    </tbody>
 
 </table>
 
-<script src="remington-rand-data.js"></script>
+<h2>Inspector Information</h2>
 
-<script>
+<table>
 
-const table = document.getElementById("rrTable");
-
-remingtonRandData.forEach(function(pistol) {
-
-    table.innerHTML += `
+    <thead>
 
         <tr>
-            <td>${pistol.year}</td>
-            <td>${pistol.serial_start}</td>
-            <td>${pistol.serial_end}</td>
-            <td>${pistol.notes}</td>
+            <th>Inspector Initials</th>
+            <th>Inspector Name</th>
+            <th>Notes</th>
         </tr>
 
-    `;
+    </thead>
 
-});
+    <tbody>
 
-</script>
+        <tr>
+            <td>F.J.A.</td>
+            <td>Colonel Frank J. Atwood</td>
+            <td>
+                Primary WWII acceptance inspector for
+                Remington Rand production.
+            </td>
+        </tr>
+
+        <tr>
+            <td>H.S.</td>
+            <td>LTC Harrison Shaler</td>
+            <td>
+                Commonly referenced Remington Rand
+                inspection initials.
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+<h2>Common Characteristics</h2>
+
+<ul>
+
+    <li>
+        Parkerized finish
+    </li>
+
+    <li>
+        F.J.A. inspection mark on frame
+    </li>
+
+    <li>
+        Crossed cannons ordnance stamp
+    </li>
+
+    <li>
+        Type variations in slides and grips
+    </li>
+
+    <li>
+        WWII contractor frame markings
+    </li>
+
+</ul>
+
+<h2>Collector Notes</h2>
+
+<div class="warning-box">
+
+    Remington Rand pistols are among the most commonly
+    encountered WWII M1911A1 pistols.
+
+    Correct identification should include:
+    serial range, slide type, finish,
+    inspection marks, ordnance marks,
+    and rebuild markings.
+
+</div>
+
+<h2>Reference Sources</h2>
+
+<ul>
+
+    <li>
+        <a
+            href="https://proofhouse.com/colt/index.html"
+            target="_blank"
+        >
+            ProofHouse U.S. Military Pistol Reference
+        </a>
+    </li>
+
+</ul>
+
+<footer>
+
+    <p>
+        U.S. Military M1911 & M1911A1 Database
+    </p>
+
+    <p>
+        Historical collector reference only.
+    </p>
+
+</footer>
 
 </body>
-    <footer>
-    <p>U.S. Military M1911 & M1911A1 Database</p>
-    <p>Historical collector reference only.</p>
-</footer>
+
 </html>
