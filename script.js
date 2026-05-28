@@ -11,6 +11,24 @@ function getManufacturerPage(manufacturer) {
     return pages[manufacturer] || "index.html";
 }
 
+var individualRecordPages = {
+    "1": "pistols/1.html",
+    "2": "pistols/2.html",
+    "3": "pistols/3.html",
+    "44": "pistols/44.html",
+    "501": "pistols/501.html",
+    "5461": "pistols/5461.html",
+    "388733": "pistols/388733.html",
+    "817679": "pistols/817679.html",
+    "1293239": "pistols/1293239.html",
+    "1319373": "pistols/1319373.html",
+    "1656078": "pistols/1656078.html",
+    "2064577": "pistols/2064577.html",
+    "2335201": "pistols/2335201.html",
+    "2440064": "pistols/2440064.html",
+    "2455516": "pistols/2455516.html"
+};
+
 function escapeHtml(value) {
     return String(value === undefined || value === null ? "" : value)
         .replace(/&/g, "&amp;")
@@ -24,7 +42,8 @@ function normalizeSerial(value) {
     return String(value || "")
         .trim()
         .toUpperCase()
-        .replace(/[,\s]/g, "");
+        .replace(/[#,\s]/g, "")
+        .replace(/,/g, "");
 }
 
 function isNumericSerial(value) {
@@ -69,12 +88,14 @@ function getNotes(pistol) {
 }
 
 function getIndividualPageLink(input) {
-    if (typeof pistolRecords === "undefined") {
-        return "";
+    var serial = normalizeSerial(input);
+
+    if (individualRecordPages[serial]) {
+        return "<p><a href='" + escapeHtml(individualRecordPages[serial]) + "'>Open Individual Record →</a></p>";
     }
 
-    if (pistolRecords[input]) {
-        return "<p><a href='pistols/" + encodeURIComponent(input) + ".html'>View Individual Pistol Page →</a></p>";
+    if (typeof pistolRecords !== "undefined" && pistolRecords[serial]) {
+        return "<p><a href='pistols/" + encodeURIComponent(serial) + ".html'>Open Individual Record →</a></p>";
     }
 
     return "";
@@ -109,13 +130,9 @@ function searchDatabase() {
     }
 
     var matches = pistols.filter(function(pistol) {
-
         var serialOk = serialMatches(input, pistol);
-
         var manufacturerOk = manufacturer === "" || pistol.manufacturer === manufacturer;
-
         var yearOk = year === "" || String(pistol.year) === year;
-
         return serialOk && manufacturerOk && yearOk;
     });
 
@@ -148,10 +165,12 @@ function showAllResults(input, matches) {
     html += "<th>Range</th>";
     html += "<th>Notes</th>";
     html += "<th>Reference Page</th>";
+    html += "<th>Individual Record</th>";
     html += "</tr>";
 
     matches.forEach(function(pistol) {
         var page = getManufacturerPage(pistol.manufacturer);
+        var individualLink = getIndividualPageLink(input);
 
         html += "<tr>";
         html += "<td>" + escapeHtml(pistol.manufacturer) + "</td>";
@@ -159,13 +178,11 @@ function showAllResults(input, matches) {
         html += "<td>" + getRangeText(pistol) + "</td>";
         html += "<td>" + escapeHtml(getNotes(pistol)) + "</td>";
         html += "<td><a href='" + escapeHtml(page) + "'>Open</a></td>";
+        html += "<td>" + (individualLink ? individualLink : "No individual record yet") + "</td>";
         html += "</tr>";
     });
 
     html += "</table>";
-
-    html += getIndividualPageLink(input);
-
     html += "</div>";
 
     result.innerHTML = html;
