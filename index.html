@@ -3,7 +3,7 @@
 
 <head>
     <title>1911 Database</title>
-<meta name="google-site-verification" content="BsGDzBXgLqOc4GS7S8z2keF0cCimTTzJlUolzFGrdoQ" />
+    <meta name="google-site-verification" content="BsGDzBXgLqOc4GS7S8z2keF0cCimTTzJlUolzFGrdoQ" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -12,36 +12,22 @@
 <h1>US Military M1911 & M1911A1 Database</h1>
 
 <p>
-    Search serial numbers or browse by manufacturer.
+    Search serial numbers, research manufacturers,
+    verify markings, and study historical U.S. military 1911 pistols.
 </p>
 
 <nav>
-
     <a href="index.html">Home</a>
-
     <a href="colt.html">Colt</a>
-
     <a href="ithaca.html">Ithaca</a>
-
     <a href="remington-rand.html">Remington Rand</a>
-
-    <a href="union-switch-signal.html">
-        Union Switch & Signal
-    </a>
-
+    <a href="union-switch-signal.html">US&amp;S</a>
     <a href="singer.html">Singer</a>
-
     <a href="inspectors.html">Inspectors</a>
-
-    <a href="arsenal-rebuilds.html">
-        Arsenal Rebuilds
-    </a>
-
+    <a href="arsenal-rebuilds.html">Arsenal Rebuilds</a>
     <a href="contracts.html">Contracts</a>
-
+    <a href="collector-guide.html">Collector Guide</a>
 </nav>
-
-<br>
 
 <div class="search-box">
 
@@ -51,110 +37,76 @@
         placeholder="Enter serial number"
     >
 
+    <br>
+
     <button onclick="searchDatabase()">
-        Search
+        Search Database
     </button>
 
 </div>
 
-<br>
-
 <div id="result"></div>
 
-<h2>Quick Browse Manufacturers</h2>
+<h2>Browse Manufacturers</h2>
 
 <div class="manufacturer-grid">
 
     <a class="manufacturer-card" href="colt.html">
         <h3>Colt</h3>
-        <p>Browse Colt serial ranges</p>
+        <p>WWI and WWII Colt military production</p>
     </a>
 
     <a class="manufacturer-card" href="ithaca.html">
         <h3>Ithaca</h3>
-        <p>Browse Ithaca serial ranges</p>
+        <p>Ithaca WWII contractor production</p>
     </a>
 
     <a class="manufacturer-card" href="remington-rand.html">
         <h3>Remington Rand</h3>
-        <p>Browse Remington Rand serial ranges</p>
+        <p>Remington Rand wartime production</p>
     </a>
 
     <a class="manufacturer-card" href="union-switch-signal.html">
-        <h3>Union Switch & Signal</h3>
-        <p>Browse US&S serial ranges</p>
+        <h3>Union Switch &amp; Signal</h3>
+        <p>US&amp;S contract pistols</p>
     </a>
 
     <a class="manufacturer-card" href="singer.html">
         <h3>Singer</h3>
-        <p>Browse Singer contract pistols</p>
+        <p>Rare Singer contract pistols</p>
     </a>
 
 </div>
 
-<h2>Manufacturer Pages</h2>
+<h2>Collector Reference Library</h2>
 
-<table>
+<div class="reference-grid">
 
-    <thead>
+    <a class="reference-card" href="inspectors.html">
+        <h3>Inspector Marks</h3>
+        <p>FJA, GHD, WGP, JKC, and other military inspector references.</p>
+    </a>
 
-        <tr>
-            <th>Manufacturer</th>
-            <th>Description</th>
-            <th>Link</th>
-        </tr>
+    <a class="reference-card" href="arsenal-rebuilds.html">
+        <h3>Arsenal Rebuilds</h3>
+        <p>AA, RIA, SA, OG, ANAD, LEAD, and rebuild information.</p>
+    </a>
 
-    </thead>
+    <a class="reference-card" href="contracts.html">
+        <h3>Contract Pistols</h3>
+        <p>Foreign contracts, special contracts, and historical production references.</p>
+    </a>
 
-    <tbody>
+    <a class="reference-card" href="collector-guide.html">
+        <h3>Collector Guide</h3>
+        <p>Authentication tips, rebuild identification, and originality checks.</p>
+    </a>
 
-        <tr>
-            <td>Colt</td>
-            <td>Complete Colt serial number ranges</td>
-            <td>
-                <a href="colt.html">Open</a>
-            </td>
-        </tr>
+</div>
 
-        <tr>
-            <td>Ithaca</td>
-            <td>Ithaca production serial ranges</td>
-            <td>
-                <a href="ithaca.html">Open</a>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Remington Rand</td>
-            <td>Remington Rand serial ranges</td>
-            <td>
-                <a href="remington-rand.html">Open</a>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Union Switch & Signal</td>
-            <td>US&S production serial ranges</td>
-            <td>
-                <a href="union-switch-signal.html">Open</a>
-            </td>
-        </tr>
-
-        <tr>
-            <td>Singer</td>
-            <td>Singer contract pistols</td>
-            <td>
-                <a href="singer.html">Open</a>
-            </td>
-        </tr>
-
-    </tbody>
-
-</table>
+<h2>About This Database</h2>
 
 <div class="disclaimer-box">
-
-    <h2>Disclaimer</h2>
 
     <p>
         This website is an independent historical and collector
@@ -163,7 +115,7 @@
 
     <p>
         This site is not affiliated with Colt, Ithaca, Remington Rand,
-        Union Switch & Signal, Singer, the U.S. Government,
+        Union Switch &amp; Signal, Singer, the U.S. Government,
         the Department of Defense, CMP, or any firearms manufacturer.
     </p>
 
@@ -193,7 +145,7 @@
 <footer>
 
     <p>
-        U.S. Military M1911 & M1911A1 Database
+        U.S. Military M1911 &amp; M1911A1 Database
     </p>
 
     <p>
@@ -203,108 +155,8 @@
 </footer>
 
 <script src="./data.js?v=10"></script>
+<script src="./script.js?v=2"></script>
 
-<script>
-function getManufacturerPage(manufacturer) {
-    if (manufacturer === "Colt") return "colt.html";
-    if (manufacturer === "Springfield Armory") return "springfield.html";
-    if (manufacturer === "Ithaca") return "ithaca.html";
-    if (manufacturer === "Remington Rand") return "remington-rand.html";
-    if (manufacturer === "Union Switch & Signal") return "union-switch-signal.html";
-    if (manufacturer === "Singer") return "singer.html";
-    return "index.html";
-}
-
-function searchDatabase() {
-    var input = document.getElementById("searchInput").value.trim().toUpperCase();
-    var result = document.getElementById("result");
-
-    result.innerHTML = "";
-
-    if (input === "") {
-        result.innerHTML = "<p>Please enter a serial number.</p>";
-        return;
-    }
-
-    var matches = [];
-
-    for (var i = 0; i < pistols.length; i++) {
-        var pistol = pistols[i];
-
-        if (!isNaN(input)) {
-            var serial = Number(input);
-
-            if (
-                serial >= Number(pistol.serial_start) &&
-                serial <= Number(pistol.serial_end)
-            ) {
-                matches.push(pistol);
-            }
-        } else {
-            var start = String(pistol.serial_start).toUpperCase();
-            var end = String(pistol.serial_end).toUpperCase();
-
-            if (input >= start && input <= end) {
-                matches.push(pistol);
-            }
-        }
-    }
-
-    if (matches.length === 0) {
-        result.innerHTML = "<p>No matching serial range found.</p>";
-        return;
-    }
-
-    showAllResults(input, matches);
-}
-
-function showAllResults(input, matches) {
-    var result = document.getElementById("result");
-
-    var html = "<div class='result-card'>";
-
-    if (matches.length > 1) {
-        html += "<h2>Multiple Possible Matches Found</h2>";
-        html += "<div class='warning-box'>";
-        html += "WARNING: This serial number falls within an overlapping or duplicate serial range. Verify using inspector marks, slide markings, frame markings, finish, and ordnance stamps.";
-        html += "</div>";
-    } else {
-        html += "<h2>Result Found</h2>";
-    }
-
-    html += "<table>";
-    html += "<tr>";
-    html += "<th>Manufacturer</th>";
-    html += "<th>Year</th>";
-    html += "<th>Range</th>";
-    html += "<th>Notes</th>";
-    html += "<th>Page</th>";
-    html += "</tr>";
-
-    for (var i = 0; i < matches.length; i++) {
-        var pistol = matches[i];
-        var page = getManufacturerPage(pistol.manufacturer);
-
-        html += "<tr>";
-        html += "<td>" + pistol.manufacturer + "</td>";
-        html += "<td>" + pistol.year + "</td>";
-        html += "<td>" + pistol.serial_start + " - " + pistol.serial_end + "</td>";
-        html += "<td>" + pistol.notes + "</td>";
-        html += "<td><a href='" + page + "'>Open</a></td>";
-        html += "</tr>";
-    }
-
-    html += "</table>";
-
-    html += "<p>";
-    html += "<a href='pistols/" + input + ".html'>View Individual Pistol Page →</a>";
-    html += "</p>";
-
-    html += "</div>";
-
-    result.innerHTML = html;
-}
-</script>
 </body>
 
 </html>
