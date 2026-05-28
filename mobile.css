@@ -1,0 +1,155 @@
+body {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+
+  h1 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  header {
+    padding: 22px 12px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  header p {
+    font-size: 14px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 8px;
+    padding: 10px 12px;
+    margin: 12px 0;
+    max-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav a {
+    flex: 0 0 auto;
+    font-size: 13px;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  table {
+    display: block;
+    width: calc(100% - 16px);
+    max-width: calc(100% - 16px);
+    margin: 14px auto;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  th,
+  td {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  td {
+    min-width: 150px;
+  }
+
+  .manufacturer-grid,
+  .reference-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .manufacturer-card,
+  .reference-card {
+    padding: 16px;
+  }
+
+  .result-card,
+  .warning-box,
+  .disclaimer-box {
+    margin: 14px 8px;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin: 12px;
+  }
+
+  .photo-slot {
+    padding: 8px;
+  }
+
+  #searchInput {
+    width: calc(100% - 24px);
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  button {
+    width: calc(100% - 24px);
+    max-width: 420px;
+    padding: 12px;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    margin: 6px 10px;
+  }
+
+  .bottom-disclaimer {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  th,
+  td {
+    font-size: 12px;
+  }
+
+  .photo-caption {
+    font-size: 12px;
+  }
+}
