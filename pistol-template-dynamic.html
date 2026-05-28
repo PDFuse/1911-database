@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Pistol Record Template</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>U.S. Military M1911 & M1911A1 Individual Record</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="colt.html">Colt</a>
+<a href="ithaca.html">Ithaca</a>
+<a href="remington-rand.html">Remington Rand</a>
+<a href="union-switch-signal.html">US&amp;S</a>
+<a href="singer.html">Singer</a>
+<a href="inspectors.html">Inspectors</a>
+<a href="arsenal-rebuilds.html">Arsenal Rebuilds</a>
+<a href="contracts.html">Contracts</a>
+<a href="collector-guide.html">Collector Guide</a>
+</nav>
+
+<div class="warning-box">
+<strong>Template Instructions:</strong>
+Copy this file into the pistols folder and replace RECORD_ID with the matching pistolRecords entry.
+</div>
+
+<div id="recordContainer"></div>
+
+<script src="pistol-records.js"></script>
+
+<script>
+
+const recordId = "RECORD_ID";
+const pistol = pistolRecords[recordId];
+
+if (!pistol) {
+    document.getElementById("recordContainer").innerHTML = `
+        <div class="warning-box">
+            <strong>Error:</strong>
+            No pistol record found for ${recordId}.
+        </div>
+    `;
+} else {
+
+    const verificationHtml = pistol.verification_points
+        .map(point => `<li>${point}</li>`)
+        .join("");
+
+    const html = `
+
+    <h2>Serial Number: ${pistol.serial_number}</h2>
+
+    <table>
+        <tr>
+            <th>Field</th>
+            <th>Information</th>
+        </tr>
+
+        <tr>
+            <td>Manufacturer</td>
+            <td>${pistol.manufacturer}</td>
+        </tr>
+
+        <tr>
+            <td>Model</td>
+            <td>${pistol.model}</td>
+        </tr>
+
+        <tr>
+            <td>Production Year</td>
+            <td>${pistol.production_year}</td>
+        </tr>
+
+        <tr>
+            <td>Serial Range</td>
+            <td>${pistol.serial_range}</td>
+        </tr>
+
+        <tr>
+            <td>Production Type</td>
+            <td>${pistol.production_type}</td>
+        </tr>
+
+        <tr>
+            <td>Inspector Information</td>
+            <td>${pistol.inspector}</td>
+        </tr>
+
+        <tr>
+            <td>Finish</td>
+            <td>${pistol.finish}</td>
+        </tr>
+
+        <tr>
+            <td>Barrel</td>
+            <td>${pistol.barrel}</td>
+        </tr>
+
+        <tr>
+            <td>Rebuild Marks</td>
+            <td>${pistol.rebuild_marks}</td>
+        </tr>
+
+        <tr>
+            <td>Matching Status</td>
+            <td>${pistol.matching_status}</td>
+        </tr>
+
+        <tr>
+            <td>Collector Notes</td>
+            <td>${pistol.notes}</td>
+        </tr>
+
+    </table>
+
+    <h2>Verification Checklist</h2>
+
+    <div class="warning-box">
+        <ul>
+            ${verificationHtml}
+        </ul>
+    </div>
+
+    <h2>Photo Gallery</h2>
+
+    <div class="photo-grid">
+
+        <div class="photo-slot">
+            <img src="${pistol.photos.left}" alt="Left Side">
+            <p class="photo-caption">Left Side</p>
+        </div>
+
+        <div class="photo-slot">
+            <img src="${pistol.photos.right}" alt="Right Side">
+            <p class="photo-caption">Right Side</p>
+        </div>
+
+        <div class="photo-slot">
+            <img src="${pistol.photos.serial}" alt="Serial Number">
+            <p class="photo-caption">Serial Number</p>
+        </div>
+
+        <div class="photo-slot">
+            <img src="${pistol.photos.inspector}" alt="Inspector Mark">
+            <p class="photo-caption">Inspector Mark</p>
+        </div>
+
+        <div class="photo-slot">
+            <img src="${pistol.photos.slide}" alt="Slide Markings">
+            <p class="photo-caption">Slide Markings</p>
+        </div>
+
+        <div class="photo-slot">
+            <img src="${pistol.photos.barrel}" alt="Barrel">
+            <p class="photo-caption">Barrel / Parts</p>
+        </div>
+
+    </div>
+
+    <div class="warning-box">
+        <strong>Collector Notice:</strong>
+        Authentication should be independently verified using photographs,
+        serial range references, and comparison with known examples.
+    </div>
+
+    `;
+
+    document.getElementById("recordContainer").innerHTML = html;
+}
+
+</script>
+
+<footer>
+<p>U.S. Military M1911 &amp; M1911A1 Database</p>
+<p>Historical collector reference only.</p>
+</footer>
+
+</body>
+</html>
