@@ -7,6 +7,8 @@
 
 <body>
 
+<div id="site-header"></div>
+
 <h1>Colt M1911 & M1911A1 Serial Number Ranges</h1>
 
 <p>
@@ -14,19 +16,6 @@
     This page provides Colt serial number ranges and original collector guidance for identifying, researching,
     and documenting Colt military pistols.
 </p>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="colt.html">Colt</a>
-    <a href="ithaca.html">Ithaca</a>
-    <a href="remington-rand.html">Remington Rand</a>
-    <a href="union-switch-signal.html">US&amp;S</a>
-    <a href="singer.html">Singer</a>
-    <a href="inspectors.html">Inspectors</a>
-    <a href="arsenal-rebuilds.html">Arsenal Rebuilds</a>
-    <a href="contracts.html">Contracts</a>
-    <a href="collector-guide.html">Collector Guide</a>
-</nav>
 
 <div class="reference-grid">
 
@@ -183,47 +172,17 @@
         <th>Collector Notes</th>
     </tr>
 
-    <tr>
-        <td>J.M.G.</td>
-        <td>Early Colt M1911 production</td>
-        <td>Generally associated with very early military Colt pistols.</td>
-    </tr>
-
-    <tr>
-        <td>R.C.D.</td>
-        <td>Early M1911 inspection references</td>
-        <td>Should be evaluated with serial range and production period.</td>
-    </tr>
-
-    <tr>
-        <td>W.G.P.</td>
-        <td>WWI-era Colt and Springfield Armory references</td>
-        <td>Commonly encountered on early military M1911 collector references.</td>
-    </tr>
-
-    <tr>
-        <td>R.S.</td>
-        <td>Pre-war / early M1911A1 Colt references</td>
-        <td>Use serial range and finish condition to support identification.</td>
-    </tr>
-
-    <tr>
-        <td>W.B.</td>
-        <td>Early WWII Colt M1911A1 references</td>
-        <td>Important for early WWII Colt evaluation.</td>
-    </tr>
-
-    <tr>
-        <td>G.H.D.</td>
-        <td>WWII Colt M1911A1 production</td>
-        <td>Commonly associated with WWII Colt pistols and should be photographed clearly.</td>
-    </tr>
+    <tr><td>J.M.G.</td><td>Early Colt M1911 production</td><td>Generally associated with very early military Colt pistols.</td></tr>
+    <tr><td>R.C.D.</td><td>Early M1911 inspection references</td><td>Should be evaluated with serial range and production period.</td></tr>
+    <tr><td>W.G.P.</td><td>WWI-era Colt and Springfield Armory references</td><td>Commonly encountered on early military M1911 collector references.</td></tr>
+    <tr><td>R.S.</td><td>Pre-war / early M1911A1 Colt references</td><td>Use serial range and finish condition to support identification.</td></tr>
+    <tr><td>W.B.</td><td>Early WWII Colt M1911A1 references</td><td>Important for early WWII Colt evaluation.</td></tr>
+    <tr><td>G.H.D.</td><td>WWII Colt M1911A1 production</td><td>Commonly associated with WWII Colt pistols and should be photographed clearly.</td></tr>
 </table>
 
 <h2>Colt Serial Number Production Ranges</h2>
 
 <table>
-
     <thead>
         <tr>
             <th>Year</th>
@@ -256,35 +215,12 @@
 <h2>Common Colt Red Flags</h2>
 
 <table>
-    <tr>
-        <th>Red Flag</th>
-        <th>Why It Matters</th>
-    </tr>
-
-    <tr>
-        <td>Weak or rounded markings</td>
-        <td>May indicate buffing or commercial refinish.</td>
-    </tr>
-
-    <tr>
-        <td>Slide does not match serial period</td>
-        <td>May indicate a replacement slide, arsenal rebuild, or later assembly.</td>
-    </tr>
-
-    <tr>
-        <td>Incorrect inspector initials</td>
-        <td>Inspector marks should fit the manufacturer and production period.</td>
-    </tr>
-
-    <tr>
-        <td>Fresh finish over worn parts</td>
-        <td>May indicate refinishing rather than original service wear.</td>
-    </tr>
-
-    <tr>
-        <td>Modern replacement parts</td>
-        <td>Modern parts can affect collector classification and value.</td>
-    </tr>
+    <tr><th>Red Flag</th><th>Why It Matters</th></tr>
+    <tr><td>Weak or rounded markings</td><td>May indicate buffing or commercial refinish.</td></tr>
+    <tr><td>Slide does not match serial period</td><td>May indicate a replacement slide, arsenal rebuild, or later assembly.</td></tr>
+    <tr><td>Incorrect inspector initials</td><td>Inspector marks should fit the manufacturer and production period.</td></tr>
+    <tr><td>Fresh finish over worn parts</td><td>May indicate refinishing rather than original service wear.</td></tr>
+    <tr><td>Modern replacement parts</td><td>Modern parts can affect collector classification and value.</td></tr>
 </table>
 
 <div class="warning-box">
@@ -294,33 +230,26 @@
     described as untouched original unless the evidence supports that conclusion.
 </div>
 
+<div id="site-footer"></div>
+
+<script src="header.js"></script>
+<script src="footer.js"></script>
 <script src="colt-data.js"></script>
 
 <script>
-
 const table = document.getElementById("coltTable");
 
 coltData.forEach(function(pistol) {
-
     table.innerHTML += `
-
         <tr>
             <td>${pistol.year}</td>
             <td>${pistol.serial_start}</td>
             <td>${pistol.serial_end}</td>
             <td>${pistol.notes}</td>
         </tr>
-
     `;
-
 });
-
 </script>
-
-<footer>
-    <p>U.S. Military M1911 &amp; M1911A1 Database</p>
-    <p>Historical collector reference only.</p>
-</footer>
 
 </body>
 </html>
