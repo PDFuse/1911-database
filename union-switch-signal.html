@@ -7,71 +7,85 @@
 
 <body>
 
-<h1>Union Switch & Signal M1911A1 Serial Number Ranges</h1>
+<h1>Union Switch & Signal M1911A1 Reference</h1>
 
 <p>
-Complete Union Switch & Signal production serial number ranges.
+    Union Switch & Signal produced some of the most collectible WWII M1911A1 pistols.
+    US&amp;S pistols are known for relatively limited production and strong collector interest.
 </p>
 
 <nav>
-
     <a href="index.html">Home</a>
-
     <a href="colt.html">Colt</a>
-
     <a href="ithaca.html">Ithaca</a>
-
     <a href="remington-rand.html">Remington Rand</a>
-
-    <a href="union-switch-signal.html">
-        Union Switch & Signal
-    </a>
-
+    <a href="union-switch-signal.html">US&amp;S</a>
+    <a href="singer.html">Singer</a>
+    <a href="inspectors.html">Inspectors</a>
+    <a href="arsenal-rebuilds.html">Arsenal Rebuilds</a>
+    <a href="contracts.html">Contracts</a>
+    <a href="collector-guide.html">Collector Guide</a>
 </nav>
 
+<div class="reference-grid">
+
+    <div class="reference-card">
+        <h3>Limited Production</h3>
+        <p>US&amp;S produced far fewer pistols than Colt or Remington Rand.</p>
+    </div>
+
+    <div class="reference-card">
+        <h3>Collector Interest</h3>
+        <p>Correct original US&amp;S pistols are highly desirable among WWII collectors.</p>
+    </div>
+
+    <div class="reference-card">
+        <h3>Verification</h3>
+        <p>Carefully inspect slide markings, finish, and rebuild indicators.</p>
+    </div>
+
+</div>
+
 <table>
-
     <thead>
-
         <tr>
             <th>Year</th>
             <th>Serial Start</th>
             <th>Serial End</th>
             <th>Notes</th>
         </tr>
-
     </thead>
 
     <tbody id="ussTable"></tbody>
-
 </table>
+
+<div class="warning-box">
+    <strong>Collector Note:</strong>
+    Because of the high value of US&amp;S pistols, slide swaps,
+    rebuilds, refinishes, and reproduction markings should be carefully evaluated.
+</div>
 
 <script src="union-switch-signal-data.js"></script>
 
 <script>
-
 const table = document.getElementById("ussTable");
 
 ussData.forEach(function(pistol) {
-
     table.innerHTML += `
-
         <tr>
             <td>${pistol.year}</td>
             <td>${pistol.serial_start}</td>
             <td>${pistol.serial_end}</td>
             <td>${pistol.notes}</td>
         </tr>
-
     `;
-
 });
-
 </script>
 
-</body>
-    <footer>
-    <p>U.S. Military M1911 & M1911A1 Database</p>
+<footer>
+    <p>U.S. Military M1911 &amp; M1911A1 Database</p>
     <p>Historical collector reference only.</p>
 </footer>
+
+</body>
 </html>
