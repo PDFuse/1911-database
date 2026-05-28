@@ -136,7 +136,8 @@ th {
 ========================= */
 
 .manufacturer-grid,
-.reference-grid {
+.reference-grid,
+.stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -146,7 +147,8 @@ th {
 }
 
 .manufacturer-card,
-.reference-card {
+.reference-card,
+.stat-card {
   display: block;
   color: #fff;
   text-decoration: none;
@@ -159,26 +161,35 @@ th {
 }
 
 .manufacturer-card:hover,
-.reference-card:hover {
+.reference-card:hover,
+.stat-card:hover {
   background-color: #2d2d2d;
   transform: translateY(-3px);
 }
 
 .manufacturer-card h3,
-.reference-card h3 {
+.reference-card h3,
+.stat-card h3 {
   margin-top: 0;
 }
 
 .reference-card p,
-.manufacturer-card p {
+.manufacturer-card p,
+.stat-card p {
   color: #ccc;
   margin-left: 0;
   margin-right: 0;
 }
 
+.stat-card h3 {
+  font-size: 32px;
+  color: #d4af37;
+}
+
 .result-card,
 .warning-box,
-.disclaimer-box {
+.disclaimer-box,
+.submission-section {
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
@@ -189,6 +200,20 @@ th {
 
 .warning-box {
   border-color: #8a6d3b;
+}
+
+.submission-section ul {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.submission-section li {
+  margin-bottom: 8px;
+}
+
+.small-note {
+  font-size: 14px;
+  color: #aaa;
 }
 
 /* =========================
