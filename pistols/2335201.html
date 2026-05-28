@@ -31,6 +31,11 @@ const html = `
 
 <h2>Serial Number: ${pistol.serial_number}</h2>
 
+<div class="photo-slot" style="max-width: 1000px; margin: 20px auto;">
+<img src="${pistol.photos.right}" alt="Featured View" class="reference-image">
+<p class="photo-caption">Featured View — Colt M1911A1 Serial Number ${pistol.serial_number}</p>
+</div>
+
 <div class="result-card">
 <table>
 <tr><th>Field</th><th>Information</th></tr>
