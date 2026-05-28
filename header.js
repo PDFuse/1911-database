@@ -40,7 +40,7 @@ function renderSiteHeader() {
             <a href="${base}arsenal-rebuilds.html">Arsenal Rebuilds</a>
             <a href="${base}contracts.html">Contracts</a>
             <a href="${base}collector-guide.html">Collector Guide</a>
-            <a href="${base}colt-correct-features.html">Correct Features</a>
+            <a href="${base}correct-features.html">Correct Features</a>
             <a href="${base}colt-markings-gallery.html">Photo Galleries</a>
         </nav>
     `;
