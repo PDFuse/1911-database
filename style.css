@@ -92,6 +92,37 @@ header p {
 }
 
 /* =========================
+   PISTOL PHOTO GALLERY
+========================= */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+
+.photo-slot {
+  background: #222;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.photo-slot img {
+  width: 100%;
+  border-radius: 8px;
+  display: block;
+}
+
+.photo-caption {
+  margin-top: 8px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+/* =========================
    FOOTER
 ========================= */
 
