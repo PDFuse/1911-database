@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<urlset
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url><loc>https://1911database.com/</loc></url>
+    <url><loc>https://1911database.com/index.html</loc></url>
 
-    <url>
-        <loc>https://1911database.com/</loc>
-    </url>
+    <url><loc>https://1911database.com/colt.html</loc></url>
+    <url><loc>https://1911database.com/ithaca.html</loc></url>
+    <url><loc>https://1911database.com/remington-rand.html</loc></url>
+    <url><loc>https://1911database.com/union-switch-signal.html</loc></url>
+    <url><loc>https://1911database.com/singer.html</loc></url>
 
-    <url>
-        <loc>https://1911database.com/colt.html</loc>
-    </url>
+    <url><loc>https://1911database.com/inspectors.html</loc></url>
+    <url><loc>https://1911database.com/contracts.html</loc></url>
+    <url><loc>https://1911database.com/arsenal-rebuilds.html</loc></url>
+    <url><loc>https://1911database.com/collector-guide.html</loc></url>
+    <url><loc>https://1911database.com/references.html</loc></url>
 
-    <url>
-        <loc>https://1911database.com/ithaca.html</loc>
-    </url>
+    <url><loc>https://1911database.com/correct-features.html</loc></url>
+    <url><loc>https://1911database.com/barrels.html</loc></url>
+    <url><loc>https://1911database.com/grips.html</loc></url>
+    <url><loc>https://1911database.com/mainspring-housings.html</loc></url>
+    <url><loc>https://1911database.com/hammers.html</loc></url>
+    <url><loc>https://1911database.com/triggers.html</loc></url>
+    <url><loc>https://1911database.com/magazines.html</loc></url>
+    <url><loc>https://1911database.com/finishes.html</loc></url>
 
-    <url>
-        <loc>https://1911database.com/remington-rand.html</loc>
-    </url>
+    <url><loc>https://1911database.com/colt-correct-features.html</loc></url>
+    <url><loc>https://1911database.com/ithaca-correct-features.html</loc></url>
+    <url><loc>https://1911database.com/colt-markings-gallery.html</loc></url>
+    <url><loc>https://1911database.com/rebuild-marks-gallery.html</loc></url>
 
-    <url>
-        <loc>https://1911database.com/inspectors.html</loc>
-    </url>
-
-    <url>
-        <loc>https://1911database.com/contracts.html</loc>
-    </url>
-
-    <url>
-        <loc>https://1911database.com/arsenal-rebuilds.html</loc>
-    </url>
+    <url><loc>https://1911database.com/pistol.html</loc></url>
+    <url><loc>https://1911database.com/pistols/2335201.html</loc></url>
 
 </urlset>
