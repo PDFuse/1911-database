@@ -31,6 +31,7 @@ const html = `
 
 <h2>Serial Number: ${pistol.serial_number}</h2>
 
+<div class="result-card">
 <table>
 <tr><th>Field</th><th>Information</th></tr>
 <tr><td>Manufacturer</td><td>${pistol.manufacturer}</td></tr>
@@ -39,35 +40,25 @@ const html = `
 <tr><td>Serial Range</td><td>${pistol.serial_range}</td></tr>
 <tr><td>Production Type</td><td>${pistol.production_type}</td></tr>
 <tr><td>Inspector Information</td><td>${pistol.inspector}</td></tr>
+<tr><td>CMP Status</td><td>${pistol.cmp_status}</td></tr>
+<tr><td>Provenance</td><td>${pistol.provenance}</td></tr>
+<tr><td>Matching Status</td><td>${pistol.matching_status}</td></tr>
+</table>
+</div>
+
+<h2>Documented Features</h2>
+
+<table>
+<tr><th>Component</th><th>Observation</th></tr>
 <tr><td>Finish</td><td>${pistol.finish}</td></tr>
 <tr><td>Barrel</td><td>${pistol.barrel}</td></tr>
 <tr><td>Mainspring Housing</td><td>${pistol.mainspring_housing}</td></tr>
 <tr><td>Rebuild Marks</td><td>${pistol.rebuild_marks}</td></tr>
-<tr><td>Matching Status</td><td>${pistol.matching_status}</td></tr>
-<tr><td>CMP Status</td><td>${pistol.cmp_status}</td></tr>
-<tr><td>Provenance</td><td>${pistol.provenance}</td></tr>
-<tr><td>Collector Notes</td><td>${pistol.notes}</td></tr>
-</table>
-
-<h2>Photo-Based Observations</h2>
-
-<table>
-<tr><th>Area</th><th>Observation</th></tr>
-<tr><td>Overall Configuration</td><td>The submitted photos show a WWII-style Colt M1911A1 configuration with parkerized finish appearance, brown checkered grips, and service-wear characteristics.</td></tr>
-<tr><td>Finish</td><td>The visible finish appears consistent with a wartime parkerized Colt-type appearance, but finish originality should be confirmed with close-up inspection of markings, edges, and wear patterns.</td></tr>
 <tr><td>Frame and Slide</td><td>The pistol should be reviewed for matching Colt production-period slide markings, frame markings, ordnance stamp, and G.H.D. inspection context.</td></tr>
 <tr><td>Grips</td><td>The photos show brown checkered plastic-style grips consistent with common WWII M1911A1 collector review points.</td></tr>
 <tr><td>Wear Pattern</td><td>Visible wear appears compatible with a handled service pistol; any final originality call should be based on detailed photos of serial number, inspector mark, slide legend, barrel, and small parts.</td></tr>
 <tr><td>Collector Review</td><td>This pistol should be evaluated as a late-war Colt candidate by comparing serial range, G.H.D. inspection mark, slide markings, barrel markings, finish, and small parts together.</td></tr>
 </table>
-
-<h2>Verification Checklist</h2>
-
-<div class="warning-box">
-<ul>
-${verificationHtml}
-</ul>
-</div>
 
 <h2>Photo Gallery</h2>
 
@@ -103,6 +94,20 @@ ${verificationHtml}
 <p class="photo-caption">Barrel / Parts</p>
 </div>
 
+</div>
+
+<h2>Collector Notes</h2>
+
+<div class="warning-box">
+${pistol.notes}
+</div>
+
+<h2>Verification Checklist</h2>
+
+<div class="warning-box">
+<ul>
+${verificationHtml}
+</ul>
 </div>
 
 <div class="warning-box">
