@@ -218,118 +218,13 @@ th {
 
 .photo-caption {
   margin-top: 8px;
-  color: #ccc;
-  font-size: 14px;
 }
 
-/* =========================
-   FOOTER
-========================= */
-
-footer,
-.site-footer {
-  background-color: #111;
-  color: #ccc;
-  text-align: center;
-  padding: 40px 20px;
-  margin-top: 50px;
-  border-top: 1px solid #333;
-}
-
-footer p {
-  margin: 5px 0;
-}
-
-/* =========================
-   FOOTER LINKS
-========================= */
-
-.footer-links {
-  margin-bottom: 20px;
-}
-
-.footer-links a {
-  color: #ddd;
-  text-decoration: none;
-  margin: 0 12px;
-  font-size: 14px;
-  transition: 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-/* =========================
-   COPYRIGHT
-========================= */
-
-.footer-copy {
-  font-size: 13px;
-  margin-bottom: 25px;
-  color: #999;
-}
-
-/* =========================
-   DISCLAIMER
-========================= */
-
-.bottom-disclaimer {
+.reference-image {
+  width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
-  font-size: 11px;
-  line-height: 1.8;
-  color: #777;
-  text-align: left;
-  border-top: 1px solid #222;
-  padding-top: 25px;
-}
-
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-  h1 {
-    font-size: 28px;
-  }
-
-  header h1 {
-    font-size: 28px;
-  }
-
-  header p {
-    font-size: 14px;
-  }
-
-  nav {
-    justify-content: flex-start;
-  }
-
-  nav a {
-    font-size: 13px;
-    padding: 7px 10px;
-  }
-
-  .manufacturer-card,
-  .reference-card {
-    padding: 20px;
-  }
-
-  #searchInput {
-    font-size: 16px;
-    padding: 12px;
-  }
-
-  .footer-links a {
-    display: inline-block;
-    margin: 6px 10px;
-  }
-
-  .bottom-disclaimer {
-    font-size: 10px;
-    line-height: 1.6;
-  }
+  border-radius: 10px;
+  border: 1px solid #333;
+  display: block;
+  margin: auto;
 }
