@@ -7,6 +7,19 @@ body {
   font-family: Arial, sans-serif;
   background-color: #1a1a1a;
   color: #f5f5f5;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+a {
+  color: #f5f5f5;
 }
 
 /* =========================
@@ -33,12 +46,45 @@ header p {
 }
 
 /* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  background: #111;
+  border-top: 1px solid #333;
+  border-bottom: 1px solid #333;
+}
+
+nav a {
+  color: #f5f5f5;
+  text-decoration: none;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  background: #333;
+  text-decoration: underline;
+}
+
+/* =========================
    SEARCH BAR
 ========================= */
 
+.search-box,
 .search-container {
   text-align: center;
-  padding: 40px 20px;
+  padding: 30px 20px;
 }
 
 #searchInput {
@@ -53,11 +99,44 @@ header p {
   color: #111;
 }
 
+button {
+  padding: 15px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 /* =========================
-   MANUFACTURER GRID
+   TABLES
 ========================= */
 
-.manufacturer-grid {
+table {
+  width: calc(100% - 40px);
+  max-width: 1200px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #202020;
+}
+
+th,
+td {
+  border: 1px solid #444;
+  padding: 10px;
+  vertical-align: top;
+}
+
+th {
+  background: #111;
+}
+
+/* =========================
+   CARDS / GRIDS
+========================= */
+
+.manufacturer-grid,
+.reference-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
@@ -66,11 +145,11 @@ header p {
   margin: 0 auto;
 }
 
-/* =========================
-   MANUFACTURER CARDS
-========================= */
-
-.manufacturer-card {
+.manufacturer-card,
+.reference-card {
+  display: block;
+  color: #fff;
+  text-decoration: none;
   background-color: #222;
   border: 1px solid #333;
   border-radius: 10px;
@@ -79,16 +158,37 @@ header p {
   transition: 0.3s ease;
 }
 
-.manufacturer-card:hover {
+.manufacturer-card:hover,
+.reference-card:hover {
   background-color: #2d2d2d;
   transform: translateY(-3px);
 }
 
-.manufacturer-card a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: bold;
+.manufacturer-card h3,
+.reference-card h3 {
+  margin-top: 0;
+}
+
+.reference-card p,
+.manufacturer-card p {
+  color: #ccc;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.result-card,
+.warning-box,
+.disclaimer-box {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 10px;
+}
+
+.warning-box {
+  border-color: #8a6d3b;
 }
 
 /* =========================
@@ -126,6 +226,7 @@ header p {
    FOOTER
 ========================= */
 
+footer,
 .site-footer {
   background-color: #111;
   color: #ccc;
@@ -133,6 +234,10 @@ header p {
   padding: 40px 20px;
   margin-top: 50px;
   border-top: 1px solid #333;
+}
+
+footer p {
+  margin: 5px 0;
 }
 
 /* =========================
@@ -187,6 +292,10 @@ header p {
 
 @media (max-width: 768px) {
 
+  h1 {
+    font-size: 28px;
+  }
+
   header h1 {
     font-size: 28px;
   }
@@ -195,12 +304,18 @@ header p {
     font-size: 14px;
   }
 
-  .manufacturer-card {
-    padding: 20px;
+  nav {
+    justify-content: flex-start;
   }
 
-  .manufacturer-card a {
-    font-size: 18px;
+  nav a {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .manufacturer-card,
+  .reference-card {
+    padding: 20px;
   }
 
   #searchInput {
