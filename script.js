@@ -16,7 +16,7 @@ function escapeHtml(value) {
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
+        .replace(/\"/g, "&quot;")
         .replace(/'/g, "&#039;");
 }
 
@@ -32,6 +32,10 @@ function isNumericSerial(value) {
 }
 
 function serialMatches(input, pistol) {
+    if (input === "") {
+        return true;
+    }
+
     if (isNumericSerial(input)) {
         var serial = Number(input);
         var start = Number(pistol.serial_start);
@@ -64,8 +68,29 @@ function getNotes(pistol) {
     return notes;
 }
 
+function getIndividualPageLink(input) {
+    if (typeof pistolRecords === "undefined") {
+        return "";
+    }
+
+    if (pistolRecords[input]) {
+        return "<p><a href='pistols/" + encodeURIComponent(input) + ".html'>View Individual Pistol Page →</a></p>";
+    }
+
+    return "";
+}
+
+function clearSearch() {
+    document.getElementById("searchInput").value = "";
+    document.getElementById("manufacturerFilter").value = "";
+    document.getElementById("yearFilter").value = "";
+    document.getElementById("result").innerHTML = "";
+}
+
 function searchDatabase() {
     var inputElement = document.getElementById("searchInput");
+    var manufacturerFilter = document.getElementById("manufacturerFilter");
+    var yearFilter = document.getElementById("yearFilter");
     var result = document.getElementById("result");
 
     if (!inputElement || !result) {
@@ -73,12 +98,10 @@ function searchDatabase() {
     }
 
     var input = normalizeSerial(inputElement.value);
-    result.innerHTML = "";
+    var manufacturer = manufacturerFilter ? manufacturerFilter.value : "";
+    var year = yearFilter ? yearFilter.value : "";
 
-    if (input === "") {
-        result.innerHTML = "<p>Please enter a serial number.</p>";
-        return;
-    }
+    result.innerHTML = "";
 
     if (typeof pistols === "undefined" || !Array.isArray(pistols)) {
         result.innerHTML = "<p>Serial number data could not be loaded.</p>";
@@ -86,11 +109,18 @@ function searchDatabase() {
     }
 
     var matches = pistols.filter(function(pistol) {
-        return serialMatches(input, pistol);
+
+        var serialOk = serialMatches(input, pistol);
+
+        var manufacturerOk = manufacturer === "" || pistol.manufacturer === manufacturer;
+
+        var yearOk = year === "" || String(pistol.year) === year;
+
+        return serialOk && manufacturerOk && yearOk;
     });
 
     if (matches.length === 0) {
-        result.innerHTML = "<p>No matching serial range found.</p>";
+        result.innerHTML = "<div class='warning-box'><strong>No matches found.</strong></div>";
         return;
     }
 
@@ -99,12 +129,13 @@ function searchDatabase() {
 
 function showAllResults(input, matches) {
     var result = document.getElementById("result");
+
     var html = "<div class='result-card'>";
 
     if (matches.length > 1) {
         html += "<h2>Multiple Possible Matches Found</h2>";
         html += "<div class='warning-box'>";
-        html += "WARNING: This serial number falls within an overlapping or duplicate serial range. Verify using inspector marks, slide markings, frame markings, finish, and ordnance stamps.";
+        html += "WARNING: This search returned multiple matching or overlapping ranges. Verify using inspector marks, slide markings, frame markings, finish, and ordnance stamps.";
         html += "</div>";
     } else {
         html += "<h2>Result Found</h2>";
@@ -116,7 +147,7 @@ function showAllResults(input, matches) {
     html += "<th>Year</th>";
     html += "<th>Range</th>";
     html += "<th>Notes</th>";
-    html += "<th>Page</th>";
+    html += "<th>Reference Page</th>";
     html += "</tr>";
 
     matches.forEach(function(pistol) {
@@ -132,7 +163,9 @@ function showAllResults(input, matches) {
     });
 
     html += "</table>";
-    html += "<p><a href='pistols/" + encodeURIComponent(input) + ".html'>View Individual Pistol Page →</a></p>";
+
+    html += getIndividualPageLink(input);
+
     html += "</div>";
 
     result.innerHTML = html;
