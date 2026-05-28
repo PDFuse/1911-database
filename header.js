@@ -3,6 +3,18 @@ function getBasePath() {
     return path.includes('/pistols/') ? '../' : '';
 }
 
+function loadMobileStylesheet() {
+    var base = getBasePath();
+
+    if (!document.getElementById('mobile-stylesheet')) {
+        var link = document.createElement('link');
+        link.id = 'mobile-stylesheet';
+        link.rel = 'stylesheet';
+        link.href = base + 'mobile.css';
+        document.head.appendChild(link);
+    }
+}
+
 function renderSiteHeader() {
     var base = getBasePath();
     var header = document.getElementById('site-header');
@@ -34,4 +46,7 @@ function renderSiteHeader() {
     `;
 }
 
-document.addEventListener('DOMContentLoaded', renderSiteHeader);
+document.addEventListener('DOMContentLoaded', function() {
+    loadMobileStylesheet();
+    renderSiteHeader();
+});
