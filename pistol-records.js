@@ -56,20 +56,21 @@ var pistolRecords = {
         mainspring_housing: "Check for arched, checkered M1911A1-style mainspring housing unless documented as replaced",
         rebuild_marks: "Check for arsenal rebuild stamps or replacement-part indicators",
         matching_status: "Undetermined until slide, frame, barrel, finish, and small parts are reviewed together",
-        cmp_status: "Unknown",
-        provenance: "Unknown",
-        notes: "Late-war Colt pistol record created for collector research and photo documentation.",
+        cmp_status: "Received from the Civilian Marksmanship Program (CMP)",
+        provenance: "Private collection; received from the CMP.",
+        notes: "Late-war Colt pistol record. This pistol is documented as being in a private collection and was received from the Civilian Marksmanship Program.",
         verification_points: [
             "Confirm frame is within the Colt 1945 serial range.",
             "Compare slide markings to known late-war Colt examples.",
             "Check finish consistency across slide, frame, and small parts.",
             "Photograph barrel markings for comparison.",
             "Look for rebuild marks before calling the pistol original.",
-            "Evaluate small parts for WWII-correct style and finish."
+            "Evaluate small parts for WWII-correct style and finish.",
+            "Keep CMP paperwork or sales documentation with the pistol record when available."
         ],
         photos: {
-            left: "../images/2335201/left.jpg",
-            right: "../images/2335201/right.jpg",
+            left: "../photos/2335201-left.jpg",
+            right: "../photos/2335201-right.jpg",
             serial: "../images/2335201/serial.jpg",
             inspector: "../images/2335201/inspector.jpg",
             slide: "../images/2335201/slide.jpg",
