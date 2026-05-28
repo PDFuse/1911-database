@@ -14,9 +14,29 @@
 <a href="../colt.html">Colt</a>
 <a href="../ithaca.html">Ithaca</a>
 <a href="../remington-rand.html">Remington Rand</a>
+<a href="../union-switch-signal.html">US&amp;S</a>
+<a href="../singer.html">Singer</a>
+<a href="../inspectors.html">Inspectors</a>
+<a href="../arsenal-rebuilds.html">Arsenal Rebuilds</a>
+<a href="../contracts.html">Contracts</a>
+<a href="../collector-guide.html">Collector Guide</a>
 </nav>
 
-<h2>Serial Number: 2335201</h2>
+<div id="recordContainer"></div>
+
+<script src="../pistol-records.js"></script>
+
+<script>
+
+const pistol = pistolRecords["2335201"];
+
+const verificationHtml = pistol.verification_points
+    .map(point => `<li>${point}</li>`)
+    .join("");
+
+const html = `
+
+<h2>Serial Number: ${pistol.serial_number}</h2>
 
 <table>
 <tr>
@@ -26,93 +46,82 @@
 
 <tr>
 <td>Manufacturer</td>
-<td>Colt</td>
+<td>${pistol.manufacturer}</td>
+</tr>
+
+<tr>
+<td>Model</td>
+<td>${pistol.model}</td>
 </tr>
 
 <tr>
 <td>Production Year</td>
-<td>1945</td>
+<td>${pistol.production_year}</td>
 </tr>
 
 <tr>
 <td>Serial Range</td>
-<td>2244804 - 2380013</td>
+<td>${pistol.serial_range}</td>
 </tr>
 
 <tr>
 <td>Production Type</td>
-<td>Late WWII Colt production</td>
+<td>${pistol.production_type}</td>
 </tr>
 
 <tr>
-<td>Collector Notes</td>
-<td>
-Late war Colt pistol record page created for collector research and
-photo documentation.
-</td>
-</tr>
-
-</table>
-
-<h2>Known Correct Features To Verify</h2>
-
-<table>
-<tr>
-<th>Feature</th>
-<th>Expected / Notes</th>
-</tr>
-
-<tr>
-<td>Frame</td>
-<td>Colt-manufactured M1911A1 frame within the 1945 serial range.</td>
-</tr>
-
-<tr>
-<td>Slide</td>
-<td>Correct Colt slide markings should be verified against known late-war Colt examples.</td>
-</tr>
-
-<tr>
-<td>Inspector Mark</td>
-<td>Verify the correct U.S. military inspection initials and ordnance acceptance markings for the production period.</td>
+<td>Inspector Information</td>
+<td>${pistol.inspector}</td>
 </tr>
 
 <tr>
 <td>Finish</td>
-<td>Late WWII production should generally be evaluated for correct parkerized finish and consistency across frame, slide, and small parts.</td>
+<td>${pistol.finish}</td>
 </tr>
 
 <tr>
 <td>Barrel</td>
-<td>Barrel markings should be photographed and compared to accepted Colt WWII barrel variations.</td>
+<td>${pistol.barrel}</td>
 </tr>
 
 <tr>
 <td>Mainspring Housing</td>
-<td>Check for the correct arched, checkered M1911A1-style mainspring housing unless documented as replaced during service or rebuild.</td>
-</tr>
-
-<tr>
-<td>Small Parts</td>
-<td>Trigger, hammer, safety, slide stop, grips, and pins should be checked for WWII-correct style and finish.</td>
+<td>${pistol.mainspring_housing}</td>
 </tr>
 
 <tr>
 <td>Rebuild Marks</td>
-<td>Look for arsenal rebuild stamps or replacement-part indicators. Rebuild marks do not automatically make a pistol bad, but they change collector classification.</td>
+<td>${pistol.rebuild_marks}</td>
 </tr>
 
 <tr>
-<td>Matching Condition</td>
-<td>Evaluate whether slide, frame, barrel, finish, and parts appear consistent with one another or show signs of later replacement.</td>
+<td>Matching Status</td>
+<td>${pistol.matching_status}</td>
+</tr>
+
+<tr>
+<td>CMP Status</td>
+<td>${pistol.cmp_status}</td>
+</tr>
+
+<tr>
+<td>Provenance</td>
+<td>${pistol.provenance}</td>
+</tr>
+
+<tr>
+<td>Collector Notes</td>
+<td>${pistol.notes}</td>
 </tr>
 
 </table>
 
+<h2>Verification Checklist</h2>
+
 <div class="warning-box">
-<strong>Research Note:</strong>
-These are verification points, not a final authentication. Use clear photographs,
-known reference examples, and expert review before assigning originality or value.
+<ul>
+${verificationHtml}
+</ul>
 </div>
 
 <h2>Photo Gallery</h2>
@@ -120,32 +129,32 @@ known reference examples, and expert review before assigning originality or valu
 <div class="photo-grid">
 
 <div class="photo-slot">
-<img src="../images/2335201/left.jpg" alt="Left Side">
+<img src="${pistol.photos.left}" alt="Left Side">
 <p class="photo-caption">Left Side</p>
 </div>
 
 <div class="photo-slot">
-<img src="../images/2335201/right.jpg" alt="Right Side">
+<img src="${pistol.photos.right}" alt="Right Side">
 <p class="photo-caption">Right Side</p>
 </div>
 
 <div class="photo-slot">
-<img src="../images/2335201/serial.jpg" alt="Serial Number">
+<img src="${pistol.photos.serial}" alt="Serial Number">
 <p class="photo-caption">Serial Number</p>
 </div>
 
 <div class="photo-slot">
-<img src="../images/2335201/inspector.jpg" alt="Inspector Mark">
+<img src="${pistol.photos.inspector}" alt="Inspector Mark">
 <p class="photo-caption">Inspector Mark</p>
 </div>
 
 <div class="photo-slot">
-<img src="../images/2335201/slide.jpg" alt="Slide Markings">
+<img src="${pistol.photos.slide}" alt="Slide Markings">
 <p class="photo-caption">Slide Markings</p>
 </div>
 
 <div class="photo-slot">
-<img src="../images/2335201/barrel.jpg" alt="Barrel">
+<img src="${pistol.photos.barrel}" alt="Barrel">
 <p class="photo-caption">Barrel / Parts</p>
 </div>
 
@@ -153,13 +162,19 @@ known reference examples, and expert review before assigning originality or valu
 
 <div class="warning-box">
 <strong>Collector Notice:</strong>
-Authentication should be independently verified.
+Authentication should be independently verified using photographs,
+serial range references, known examples, and expert review.
 </div>
 
 <footer>
-<p>U.S. Military M1911 & M1911A1 Database</p>
+<p>U.S. Military M1911 &amp; M1911A1 Database</p>
 <p>Historical collector reference only.</p>
 </footer>
+`;
+
+document.getElementById("recordContainer").innerHTML = html;
+
+</script>
 
 </body>
 </html>
