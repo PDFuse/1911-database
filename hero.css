@@ -1,0 +1,150 @@
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #111, #1b1b1b);
+  border-bottom: 1px solid #333;
+}
+
+.hero-content {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 54px;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 22px;
+  color: #d0d0d0;
+  margin-bottom: 18px;
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #b5b5b5;
+  max-width: 760px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 8px;
+  background: #222;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid #333;
+  transition: 0.2s ease;
+}
+
+.hero-button:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+.primary-button {
+  background: #8b0000;
+  border-color: #a50000;
+}
+
+.primary-button:hover {
+  background: #a50000;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 40px;
+}
+
+.hero-stat-card {
+  background: #202020;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-stat-card h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.hero-stat-card p {
+  color: #bbb;
+  font-size: 14px;
+}
+
+.hero-feature-card {
+  background: #202020;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 30px;
+}
+
+.hero-feature-card h2 {
+  margin-top: 0;
+}
+
+.hero-feature-card p,
+.hero-feature-card li {
+  color: #ccc;
+}
+
+.hero-record-link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 38px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-button {
+    width: 100%;
+    text-align: center;
+  }
+}
