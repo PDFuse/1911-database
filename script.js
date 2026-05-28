@@ -18,13 +18,16 @@ var individualRecordPages = {
     "44": "pistols/44.html",
     "501": "pistols/501.html",
     "5461": "pistols/5461.html",
+    "369379": "pistols/369379.html",
     "388733": "pistols/388733.html",
     "817679": "pistols/817679.html",
+    "1080894": "pistols/1080894.html",
     "1293239": "pistols/1293239.html",
     "1319373": "pistols/1319373.html",
     "1656078": "pistols/1656078.html",
     "2064577": "pistols/2064577.html",
     "2335201": "pistols/2335201.html",
+    "2363293": "pistols/2363293.html",
     "2440064": "pistols/2440064.html",
     "2455516": "pistols/2455516.html"
 };
