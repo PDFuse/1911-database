@@ -253,3 +253,40 @@ th {
   display: block;
   margin: auto;
 }
+
+/* =========================
+   FULL REFERENCE PHOTOS
+   Forces documentation images to display without cropping.
+========================= */
+
+.photo-grid img,
+.keyes-photo-grid img,
+.full-reference-photo {
+  width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+.keyes-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 18px;
+  margin: 18px 20px 28px;
+  align-items: start;
+}
+
+.keyes-photo-grid figure {
+  margin: 0;
+  background: #1b1b1b;
+  border: 1px solid #333;
+  border-radius: 14px;
+  overflow: visible;
+}
+
+.keyes-photo-grid figcaption {
+  padding: 10px 12px;
+  line-height: 1.4;
+}
