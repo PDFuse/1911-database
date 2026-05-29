@@ -6,6 +6,7 @@ var manufacturerProductionBlocks = {
         rows: [
             ["1912", "1", "17250", "17,250", "Early M1911", "Produced", "Original Colt military M1911 production. Review early slide legend, United States Property marking, blue finish, early parts, barrel, magazine, and early inspection context."],
             ["1913", "17251", "60400", "43,150", "Early M1911", "Produced", "Early Colt M1911 production. Confirm by early frame/slide markings, finish, barrel, and period inspection marks."],
+            ["1913", "37951", "38000", "50", "Early M1911", "Shipment record", "Documented shipment sub-block: serial numbers 37951–38000 shipped to Frankford Arsenal on 12 July 1913."],
             ["1914", "60401", "72570", "12,170", "Early M1911", "Produced", "Colt M1911 production before the Springfield Armory block."],
             ["1914–1915", "72571", "83855", "—", "Springfield Armory block", "Not Colt", "This block belongs to Springfield Armory production, not Colt. Included here only to explain the gap in Colt serial numbers."],
             ["1915", "83856", "107596", "23,741", "WWI M1911", "Produced", "Colt M1911 production resumes after the Springfield Armory block. Review WWI-era slide, frame, finish, barrel, and inspection details."],
