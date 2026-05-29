@@ -5,6 +5,7 @@ var manufacturerProductionBlocks = {
         columns: ["Year", "Serial Start", "Serial End", "Reported Quantity", "Identification Period", "Status", "Notes"],
         rows: [
             ["1912", "1", "17250", "17,250", "Early M1911", "Produced", "Original Colt military M1911 production. Review early slide legend, United States Property marking, blue finish, early parts, barrel, magazine, and early inspection context."],
+            ["1912", "3501", "3799", "299", "Early M1911 / U.S.M.C.", "Shipment record", "First U.S.M.C. pistols made by Colt. Delivered 6 June 1912."],
             ["1913", "17251", "60400", "43,150", "Early M1911", "Produced", "Early Colt M1911 production. Confirm by early frame/slide markings, finish, barrel, and period inspection marks."],
             ["1913", "37951", "38000", "50", "Early M1911", "Shipment record", "Documented shipment sub-block: serial numbers 37951–38000 shipped to Frankford Arsenal on 12 July 1913."],
             ["1914", "60401", "72570", "12,170", "Early M1911", "Produced", "Colt M1911 production before the Springfield Armory block."],
