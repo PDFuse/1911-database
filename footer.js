@@ -62,7 +62,7 @@ function loadArchiveStatsScript() {
     }
 
     if (typeof individualRecordPages === 'undefined') {
-        loadScriptOnce('archive-search-script-for-stats', rootPrefix + 'script.js?v=20260529f', loadStats);
+        loadScriptOnce('archive-search-script-for-stats', rootPrefix + 'script.js?v=20260529g', loadStats);
     } else {
         loadStats();
     }
