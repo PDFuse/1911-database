@@ -24,6 +24,7 @@ var individualRecordPages = {
     "707356": "pistols/707356.html",
     "817679": "pistols/817679.html",
     "861420": "pistols/861420.html",
+    "1012841": "pistols/1012841.html",
     "1068267": "pistols/1068267.html",
     "1080894": "pistols/1080894.html",
     "1293239": "pistols/1293239.html",
@@ -103,11 +104,11 @@ function getIndividualPageLink(input) {
     var serial = normalizeSerial(input);
 
     if (individualRecordPages[serial]) {
-        return "<p><a href='" + escapeHtml(individualRecordPages[serial]) + "?v=20260529d'>Open Individual Record →</a></p>";
+        return "<p><a href='" + escapeHtml(individualRecordPages[serial]) + "?v=20260529e'>Open Individual Record →</a></p>";
     }
 
     if (typeof pistolRecords !== "undefined" && pistolRecords[serial]) {
-        return "<p><a href='pistols/" + encodeURIComponent(serial) + ".html?v=20260529d'>Open Individual Record →</a></p>";
+        return "<p><a href='pistols/" + encodeURIComponent(serial) + ".html?v=20260529e'>Open Individual Record →</a></p>";
     }
 
     return "";
