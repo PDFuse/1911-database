@@ -89,9 +89,14 @@ function loadProductionBlocksScript() {
     loadScriptOnce('production-blocks-script', './production-blocks.js?v=20260529b');
 }
 
+function loadExtraIndividualRecordsScript() {
+    loadScriptOnce('individual-records-extra-script', getRootPrefix() + 'individual-records-extra.js?v=20260529a');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     renderSiteFooter();
     loadArchiveStatsScript();
     loadFoiaStatusScript();
     loadProductionBlocksScript();
+    loadExtraIndividualRecordsScript();
 });
