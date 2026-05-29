@@ -41,6 +41,7 @@ function renderSiteHeader() {
             <a href="${base}contracts.html">Contracts</a>
             <a href="${base}collector-guide.html">Collector Guide</a>
             <a href="${base}correct-features.html">Correct Features</a>
+            <a href="${base}foia.html">FOIA Research</a>
             <a href="${base}colt-markings-gallery.html">Photo Galleries</a>
         </nav>
     `;
