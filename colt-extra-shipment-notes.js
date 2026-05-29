@@ -1,5 +1,16 @@
 var coltExtraShipmentNotes = [
     {
+        id: 'colt-springfield-1-50-row',
+        year: '1912',
+        start: '1',
+        end: '50',
+        quantity: '50',
+        period: 'Early M1911 / First Springfield Armory shipment',
+        status: 'Shipment record',
+        notes: 'Serial numbers 1–50 were delivered to Springfield Armory on 4 January 1912.',
+        insertBeforeStart: '500'
+    },
+    {
         id: 'colt-navy-500-1000-row',
         year: '1912',
         start: '500',
