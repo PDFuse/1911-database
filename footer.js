@@ -62,7 +62,7 @@ function loadArchiveStatsScript() {
     }
 
     if (typeof individualRecordPages === 'undefined') {
-        loadScriptOnce('archive-search-script-for-stats', rootPrefix + 'script.js?v=20260529e', loadStats);
+        loadScriptOnce('archive-search-script-for-stats', rootPrefix + 'script.js?v=20260529f', loadStats);
     } else {
         loadStats();
     }
@@ -86,7 +86,7 @@ function loadProductionBlocksScript() {
         return;
     }
 
-    loadScriptOnce('production-blocks-script', './production-blocks.js?v=20260529a');
+    loadScriptOnce('production-blocks-script', './production-blocks.js?v=20260529b');
 }
 
 document.addEventListener('DOMContentLoaded', function() {
