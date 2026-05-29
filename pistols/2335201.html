@@ -3,11 +3,43 @@
 <head>
 <title>Colt 2335201</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+.record-wrap{max-width:1150px;margin:0 auto;padding:16px;}
+.record-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:start;margin:20px auto;}
+.record-hero img{width:100%;border-radius:10px;border:1px solid #ccc;}
+.summary-card{background:#f7f9fc;border:1px solid #c8d3e2;border-radius:10px;padding:16px;}
+.summary-card h2{margin-top:0;}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+.badge{background:#203e6f;color:#fff;border-radius:999px;padding:6px 10px;font-size:.9rem;}
+.cmp-sheet{border:2px solid #1f3d68;border-radius:8px;overflow:hidden;margin:22px 0;background:#fff;}
+.cmp-title{background:#1f3d68;color:#fff;text-align:center;font-size:1.5rem;font-weight:bold;padding:12px;letter-spacing:.4px;}
+.cmp-section-title{background:#2f80bd;color:#fff;text-align:center;font-size:1.2rem;font-weight:bold;padding:8px;border-top:2px solid #1f3d68;}
+.cmp-table{width:100%;border-collapse:collapse;margin:0;}
+.cmp-table th,.cmp-table td{border:1px solid #b8c9dc;padding:9px 10px;vertical-align:top;}
+.cmp-table tr:nth-child(even){background:#eaf3fb;}
+.cmp-table tr:nth-child(odd){background:#fff;}
+.component-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:18px 0;}
+.component-card{border:1px solid #ccd6e2;border-radius:8px;padding:12px;background:#f9fbfe;}
+.component-card h4{margin:0 0 6px 0;color:#1f3d68;}
+.timeline{border-left:4px solid #2f80bd;margin:15px 0 20px 8px;padding-left:16px;}
+.timeline div{margin-bottom:12px;}
+.evidence-list li{margin-bottom:6px;}
+.jump-links{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px 0;}
+.jump-links a{background:#eef4fb;border:1px solid #b8c9dc;border-radius:6px;padding:7px 10px;text-decoration:none;}
+.assessment-box{background:#fff8e6;border:1px solid #d8b75a;border-radius:8px;padding:14px;margin:18px 0;}
+.notice-box{background:#f2f2f2;border:1px solid #ccc;border-radius:8px;padding:12px;margin:18px 0;}
+@media(max-width:800px){.record-hero{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 <div id="site-header"></div>
+
+<div class="record-wrap">
 <h1>Colt M1911A1 Serial Number 2335201</h1>
+<p class="small-note">Individual pistol record built in a CMP-style collector data-sheet format.</p>
 <div id="recordContainer"></div>
+</div>
+
 <div id="site-footer"></div>
 <script src="../header.js"></script>
 <script src="../footer.js"></script>
@@ -15,91 +47,162 @@
 <script>
 const pistol = pistolRecords['2335201'];
 const html = `
-<h2>CMP Style Individual Pistol Record</h2>
-<div class="photo-slot" style="max-width:1000px;margin:20px auto;">
-<img src="${pistol.photos.right}" alt="Featured View" class="reference-image">
-<p class="photo-caption">Colt M1911A1 SN ${pistol.serial_number}</p>
+<div class="record-hero">
+    <div class="photo-slot">
+        <img src="${pistol.photos.right}" alt="Colt M1911A1 Serial Number ${pistol.serial_number}" class="reference-image">
+        <p class="photo-caption">Featured view — Colt M1911A1 Serial Number ${pistol.serial_number}</p>
+    </div>
+
+    <div class="summary-card">
+        <h2>Quick Summary</h2>
+        <div class="badge-row">
+            <span class="badge">Colt</span>
+            <span class="badge">M1911A1</span>
+            <span class="badge">1945</span>
+            <span class="badge">CMP Documented</span>
+        </div>
+        <table>
+            <tr><th>Field</th><th>Information</th></tr>
+            <tr><td>Serial Number</td><td>${pistol.serial_number}</td></tr>
+            <tr><td>Manufacturer</td><td>Colt</td></tr>
+            <tr><td>Model</td><td>M1911A1</td></tr>
+            <tr><td>Production Year</td><td>1945</td></tr>
+            <tr><td>Serial Range</td><td>${pistol.serial_range}</td></tr>
+            <tr><td>Branch</td><td>U.S. Army</td></tr>
+            <tr><td>CMP Status</td><td>${pistol.cmp_status}</td></tr>
+            <tr><td>Current Assessment</td><td>High Confidence Original Configuration</td></tr>
+        </table>
+    </div>
 </div>
 
-<div class="result-card">
-<h3>Quick Summary</h3>
-<table>
-<tr><th>Field</th><th>Information</th></tr>
-<tr><td>Manufacturer</td><td>Colt</td></tr>
-<tr><td>Model</td><td>M1911A1</td></tr>
-<tr><td>Serial Number</td><td>${pistol.serial_number}</td></tr>
-<tr><td>Production Year</td><td>${pistol.production_year}</td></tr>
-<tr><td>CMP Status</td><td>${pistol.cmp_status}</td></tr>
-<tr><td>Frame</td><td>Colt</td></tr>
-<tr><td>Slide</td><td>Colt</td></tr>
-<tr><td>Originality Assessment</td><td>High Confidence Original Configuration</td></tr>
-</table>
+<div class="jump-links">
+    <a href="#datasheet">Data Sheet</a>
+    <a href="#components">Components</a>
+    <a href="#photos">Photos</a>
+    <a href="#assessment">Assessment</a>
+    <a href="#timeline">Provenance</a>
+    <a href="#references">References</a>
 </div>
 
-<div class="result-card">
-<h3>Frame & Markings</h3>
-<table>
-<tr><td>Serial Number</td><td>2335201</td></tr>
-<tr><td>Inspector</td><td>G.H.D. observed</td></tr>
-<tr><td>Proof Mark</td><td>P proof observed</td></tr>
-<tr><td>Property Marking</td><td>UNITED STATES PROPERTY</td></tr>
-<tr><td>Military Designation</td><td>M1911A1 U.S. ARMY</td></tr>
-<tr><td>Condition</td><td>Sharp markings with normal service wear</td></tr>
-</table>
-</div>
+<section id="datasheet" class="cmp-sheet">
+    <div class="cmp-title">M1911 / M1911A1 Data Sheet</div>
 
-<div class="result-card">
-<h3>Slide</h3>
-<table>
-<tr><td>Manufacturer</td><td>Colt</td></tr>
-<tr><td>Rollmarks</td><td>Correct late-war Colt patent legend and Rampant Colt</td></tr>
-<tr><td>Finish</td><td>Parkerized</td></tr>
-<tr><td>Sights</td><td>Standard GI configuration</td></tr>
-<tr><td>Assessment</td><td>Consistent with late WWII Colt production</td></tr>
-</table>
-</div>
+    <div class="cmp-section-title">Basic Information</div>
+    <table class="cmp-table">
+        <tr><td><strong>Model:</strong> M1911A1</td><td><strong>SN:</strong> ${pistol.serial_number}</td><td><strong>Branch:</strong> Army</td></tr>
+        <tr><td><strong>Manufacturer:</strong> Colt</td><td><strong>Year:</strong> 1945</td><td><strong>Production Type:</strong> Late WWII Colt production</td></tr>
+        <tr><td><strong>CMP Status:</strong> CMP Released</td><td><strong>Documentation:</strong> CMP / Private Collection</td><td><strong>Record Status:</strong> Photo documented</td></tr>
+    </table>
 
-<div class="result-card">
-<h3>Barrel</h3>
-<table>
-<tr><td>Manufacturer</td><td>Colt</td></tr>
-<tr><td>Observed Marking</td><td>Square P proof visible on barrel lug</td></tr>
-<tr><td>Condition</td><td>Typical service wear</td></tr>
-<tr><td>Assessment</td><td>Consistent with late WWII Colt barrel</td></tr>
-</table>
-</div>
+    <div class="cmp-section-title">Receiver / Frame and Markings</div>
+    <table class="cmp-table">
+        <tr><td><strong>Frame Manufacturer:</strong> Colt</td><td><strong>Serial Number:</strong> 2335201</td></tr>
+        <tr><td><strong>Right Side:</strong> UNITED STATES PROPERTY; M1911A1 U.S. ARMY</td><td><strong>Inspector:</strong> G.H.D. observed</td></tr>
+        <tr><td><strong>Proof Mark:</strong> P proof observed near magazine release</td><td><strong>Ordnance Mark:</strong> Present area photographed; needs final close-up confirmation</td></tr>
+        <tr><td><strong>Trigger Guard Marks:</strong> Partial marks observed; needs dedicated left/right close-ups</td><td><strong>Grip Panels:</strong> Brown Coltwood-style checkered grips</td></tr>
+    </table>
 
-<div class="result-card">
-<h3>Observed Features</h3>
-<ul>
-<li>Colt frame and Colt slide combination.</li>
-<li>Correct late-war Coltwood grips.</li>
-<li>G.H.D. inspection mark documented.</li>
-<li>P proof documented.</li>
-<li>Correct wide-spur hammer observed.</li>
-<li>Arched mainspring housing observed.</li>
-<li>No arsenal rebuild marks documented.</li>
-</ul>
-</div>
+    <div class="cmp-section-title">Receiver / Frame Components</div>
+    <table class="cmp-table">
+        <tr><td><strong>Hammer:</strong> Wide-spur checkered hammer observed</td></tr>
+        <tr><td><strong>Trigger:</strong> Short stamped M1911A1-style trigger observed</td></tr>
+        <tr><td><strong>Slide Stop:</strong> GI pattern, appears consistent</td></tr>
+        <tr><td><strong>Thumb Safety:</strong> GI pattern, appears consistent</td></tr>
+        <tr><td><strong>Grip Safety:</strong> M1911A1-style grip safety observed</td></tr>
+        <tr><td><strong>Main Spring Housing:</strong> Arched, checkered mainspring housing observed</td></tr>
+        <tr><td><strong>Magazine Catch:</strong> GI pattern, appears consistent</td></tr>
+    </table>
 
-<h2>Photo Documentation</h2>
-<div class="photo-grid">
-<div class="photo-slot"><img src="${pistol.photos.left}"><p class="photo-caption">Left Side</p></div>
-<div class="photo-slot"><img src="${pistol.photos.right}"><p class="photo-caption">Right Side</p></div>
-<div class="photo-slot"><img src="${pistol.photos.serial}"><p class="photo-caption">Serial Number</p></div>
-<div class="photo-slot"><img src="${pistol.photos.inspector}"><p class="photo-caption">Inspector Mark</p></div>
-<div class="photo-slot"><img src="${pistol.photos.slide}"><p class="photo-caption">Slide Markings</p></div>
-<div class="photo-slot"><img src="${pistol.photos.barrel}"><p class="photo-caption">Barrel</p></div>
-</div>
+    <div class="cmp-section-title">Barrel</div>
+    <table class="cmp-table">
+        <tr><td><strong>Type:</strong> M1911A1</td><td><strong>Manufacturer:</strong> Colt</td><td><strong>Finish:</strong> Blued / service-worn barrel finish</td></tr>
+        <tr><td colspan="3"><strong>Markings:</strong> Square P proof observed on lower barrel lug</td></tr>
+        <tr><td colspan="3"><strong>Condition:</strong> Typical service wear; bore condition requires separate bore inspection note</td></tr>
+    </table>
 
-<div class="warning-box">
-<h3>Collector Assessment</h3>
-<p>Serial number 2335201 falls within late-war Colt production. Based on currently documented photographs, the pistol retains a Colt frame, Colt slide, G.H.D. inspection mark, P proof, Colt barrel, and correct late-war configuration features. No rebuild markings have been documented. Current evidence supports a high-confidence original configuration assessment pending continued documentation of internal markings and small parts.</p>
-</div>
+    <div class="cmp-section-title">Slide</div>
+    <table class="cmp-table">
+        <tr><td><strong>Manufacturer:</strong> Colt</td></tr>
+        <tr><td><strong>Left Side Rollmark:</strong> Colt patent dates, Rampant Colt, COLT'S PT. F.A. MFG. CO., HARTFORD, CT. U.S.A.</td></tr>
+        <tr><td><strong>Front Sight:</strong> Standard GI fixed sight observed</td></tr>
+        <tr><td><strong>Rear Sight:</strong> Standard GI rear sight observed</td></tr>
+        <tr><td><strong>Recoil Spring Plug:</strong> Checkered GI pattern observed</td></tr>
+        <tr><td><strong>Finish:</strong> Parkerized finish with normal service wear</td></tr>
+    </table>
 
-<div class="warning-box">
-<strong>Research Disclaimer:</strong> This page is intended as a collector reference and research aid. Authenticity, originality, and value should always be independently verified.
-</div>`;
+    <div class="cmp-section-title">Magazine</div>
+    <table class="cmp-table">
+        <tr><td><strong>Magazine:</strong> .45 magazine present with witness holes</td></tr>
+        <tr><td><strong>Observed Markings:</strong> 45 marking visible; baseplate maker mark not yet documented</td></tr>
+        <tr><td><strong>Needed Photo:</strong> Magazine baseplate and spine markings</td></tr>
+    </table>
+</section>
+
+<section id="components">
+    <h2>Component Checklist</h2>
+    <div class="component-grid">
+        <div class="component-card"><h4>Frame</h4><p>Colt frame with serial number 2335201. U.S. property and M1911A1 U.S. Army markings observed.</p></div>
+        <div class="component-card"><h4>Slide</h4><p>Colt slide with patent legend, Rampant Colt, and Hartford address. Finish appears consistent with frame.</p></div>
+        <div class="component-card"><h4>Inspector Mark</h4><p>G.H.D. inspection mark observed on left side of frame.</p></div>
+        <div class="component-card"><h4>Barrel</h4><p>Colt barrel assessment supported by square P proof observed on lower lug.</p></div>
+        <div class="component-card"><h4>Grips</h4><p>Brown Coltwood-style checkered grips observed, consistent with late WWII Colt review points.</p></div>
+        <div class="component-card"><h4>Small Parts</h4><p>Hammer, thumb safety, grip safety, slide stop, magazine catch, trigger, and mainspring housing appear GI/correct style from current photos.</p></div>
+    </div>
+</section>
+
+<section id="photos">
+    <h2>Photo Documentation</h2>
+    <div class="photo-grid">
+        <div class="photo-slot"><img src="${pistol.photos.left}" alt="Left side"><p class="photo-caption">Left Side</p></div>
+        <div class="photo-slot"><img src="${pistol.photos.right}" alt="Right side"><p class="photo-caption">Right Side</p></div>
+        <div class="photo-slot"><img src="${pistol.photos.serial}" alt="Serial number"><p class="photo-caption">Serial Number / Property Markings</p></div>
+        <div class="photo-slot"><img src="${pistol.photos.inspector}" alt="Inspector mark"><p class="photo-caption">G.H.D. Inspector Mark / P Proof Area</p></div>
+        <div class="photo-slot"><img src="${pistol.photos.slide}" alt="Slide markings"><p class="photo-caption">Colt Slide Rollmarks</p></div>
+        <div class="photo-slot"><img src="${pistol.photos.barrel}" alt="Barrel"><p class="photo-caption">Barrel and Lug Markings</p></div>
+    </div>
+</section>
+
+<section id="assessment" class="assessment-box">
+    <h2>Collector Assessment</h2>
+    <p><strong>Originality Assessment:</strong> High Confidence Original Configuration.</p>
+    <p>Serial number 2335201 falls within late-war Colt production. The pistol is documented with a Colt frame, Colt slide, G.H.D. inspection mark, P proof, Colt barrel with square P proof on the lower lug, Coltwood-style grips, and late-war M1911A1 configuration features. No arsenal rebuild markings have been documented in the current photo set.</p>
+    <p>This assessment should remain tied to the photographic evidence. Additional close-up photographs of trigger guard stamps, magazine baseplate, top-of-slide proof, barrel hood, and internal slide markings would further strengthen the record.</p>
+</section>
+
+<section id="timeline">
+    <h2>Provenance Timeline</h2>
+    <div class="timeline">
+        <div><strong>1945:</strong> Manufactured by Colt during late WWII M1911A1 production.</div>
+        <div><strong>U.S. Military Service:</strong> Service history unknown; pistol remains a U.S. military-marked M1911A1 example.</div>
+        <div><strong>CMP Release:</strong> Released through the Civilian Marksmanship Program.</div>
+        <div><strong>Private Collection:</strong> Documented in private collection with photographs and CMP-associated information.</div>
+        <div><strong>Website Record:</strong> Archived as an individual pistol record in the 1911 Database.</div>
+    </div>
+</section>
+
+<section>
+    <h2>Open Documentation Items</h2>
+    <ul class="evidence-list">
+        <li>Dedicated left trigger guard stamp close-up.</li>
+        <li>Dedicated right trigger guard stamp close-up.</li>
+        <li>Top of slide proof mark close-up.</li>
+        <li>Magazine baseplate and spine markings.</li>
+        <li>Barrel hood and chamber area markings.</li>
+        <li>Interior slide markings.</li>
+        <li>Clear bore condition note.</li>
+    </ul>
+</section>
+
+<section id="references" class="notice-box">
+    <h2>References and Review Basis</h2>
+    <p>This page is based on the pistol's serial range, visible markings, CMP provenance, and photographic review of frame, slide, barrel, grips, and external components.</p>
+    <p>Common collector references for this style of review include J.C. Harrison, Joe Poyer, CMP data sheet practices, documented examples, and direct photographic comparison.</p>
+</section>
+
+<div class="notice-box">
+    <strong>Research Disclaimer:</strong> This record is a collector reference and research aid. It is not a factory letter, formal appraisal, or final authentication. Authenticity, originality, and value should be independently verified using complete photographs, serial references, known examples, and qualified expert review.
+</div>
+`;
 document.getElementById('recordContainer').innerHTML = html;
 </script>
 </body>
