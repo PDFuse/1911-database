@@ -78,8 +78,20 @@ function loadFoiaStatusScript() {
     loadScriptOnce('foia-status-script', '../foia-status.js?v=20260529a');
 }
 
+function loadProductionBlocksScript() {
+    var page = (window.location.pathname || '').split('/').pop();
+    var manufacturerPages = ['colt.html', 'remington-rand.html', 'ithaca.html', 'union-switch-signal.html', 'singer.html'];
+
+    if (manufacturerPages.indexOf(page) === -1) {
+        return;
+    }
+
+    loadScriptOnce('production-blocks-script', './production-blocks.js?v=20260529a');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     renderSiteFooter();
     loadArchiveStatsScript();
     loadFoiaStatusScript();
+    loadProductionBlocksScript();
 });
