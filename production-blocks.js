@@ -1,7 +1,7 @@
 var manufacturerProductionBlocks = {
     "colt.html": {
-        title: "Cleaned Colt Production Block Comparison",
-        note: "This table compares the submitted production-block information against the Colt manufacturer page. Serial number blocks are a starting point only; identification must still be confirmed by markings, inspection stamps, proofs, finish, parts, and provenance.",
+        title: "Colt Serial Number Production Blocks",
+        note: "Combined Colt serial-number table using the submitted production-block information. Serial blocks are a starting point only; identification must still be confirmed by markings, inspection stamps, proofs, finish, parts, and provenance.",
         rows: [
             ["1924", "700001", "710000", "10,000", "Produced", "1924 transitional production group delivered to Springfield Armory; important bridge between M1911 and M1911A1 features."],
             ["1937", "710001", "711605", "1,605", "Produced", "Colt USN / USA block as submitted; verify destination notes against primary references."],
@@ -24,8 +24,8 @@ var manufacturerProductionBlocks = {
         ]
     },
     "remington-rand.html": {
-        title: "Cleaned Remington Rand Production Block Comparison",
-        note: "This table adds the submitted block quantities and status notes to the Remington Rand page. Some late-war assigned ranges were not fully completed; last-reported serial notes should not be treated as separate production ranges.",
+        title: "Remington Rand Serial Number Production Blocks",
+        note: "Combined Remington Rand serial-number table using submitted block quantities and status notes. Some late-war assigned ranges were not fully completed; last-reported serial notes should not be treated as separate production ranges.",
         rows: [
             ["1943", "916405", "1041404", "125,000", "Produced", "Early Remington Rand block; verify slide marking type, F.J.A., finish, and component configuration."],
             ["1943", "1279699", "1441430", "161,732", "Produced", "Remington Rand production block."],
@@ -38,29 +38,29 @@ var manufacturerProductionBlocks = {
         ]
     },
     "ithaca.html": {
-        title: "Cleaned Ithaca Production Block Comparison",
-        note: "This table adds the submitted block quantities and special warnings. Ithaca requires extra care because the 856405–916404 block is a duplicate / special-review range.",
+        title: "Ithaca Serial Number Production Blocks",
+        note: "Combined Ithaca serial-number table using submitted block quantities and special warnings. Ithaca requires extra care because the 856405–916404 block is a duplicate / special-review range.",
         rows: [
             ["1943", "856405", "916404", "60,000", "Duplicate / special review", "Ithaca duplicated this range. Confirm Ithaca by F.J.A. inspection mark, Ithaca slide marking, frame markings, finish, ordnance stamp, and parts."],
             ["1943", "1208674", "1279673", "71,000", "Produced", "Ithaca production block."],
             ["1943", "1279674", "1279698", "25", "Replacement numbers", "Replacement-number block; do not treat as normal Ithaca production."],
             ["1943", "1441431", "1471430", "30,000", "Produced", "Ithaca production block. This corrects the commonly mistyped start value 1441131."],
-            ["1944", "1816642", "1890503", "73,862", "Produced", "Submitted range arithmetic equals 73,862 inclusive; submitted quantity listed 73,682, so quantity should be verified."],
+            ["1944", "1816642", "1890503", "73,862", "Produced / verify quantity", "Submitted range arithmetic equals 73,862 inclusive; submitted quantity listed 73,682, so quantity should be verified."],
             ["1945", "2075104", "2134403", "59,300", "Produced", "Late-war Ithaca block."],
             ["1945", "2619014", "2693613", "41,305", "Assigned / partially completed", "Submitted assigned range with last reported Ithaca serial 2660318. The reported production count aligns with 2619014–2660318, not the entire assigned range."],
             ["1945", "2660318", "2660318", "—", "Last reported note", "Submitted note: last Ithaca. Treat as a last-reported serial note, not a separate production block."]
         ]
     },
     "union-switch-signal.html": {
-        title: "Cleaned Union Switch & Signal Production Block Comparison",
-        note: "This table adds the submitted US&S production block. US&S pistols are scarce and should be authenticated conservatively using serial range, R.C.D. inspection, US&S slide/frame markings, finish, barrel, and rebuild evidence.",
+        title: "Union Switch & Signal Serial Number Production Blocks",
+        note: "Combined US&S serial-number table using the submitted production block. US&S pistols are scarce and should be authenticated conservatively using serial range, R.C.D. inspection, US&S slide/frame markings, finish, barrel, and rebuild evidence.",
         rows: [
             ["1943", "1041405", "1096404", "55,000", "Produced", "Union Switch & Signal production block as submitted. Verify by US&S frame and slide markings, R.C.D. inspection, P proofs, finish, and ordnance mark."]
         ]
     },
     "singer.html": {
-        title: "Cleaned Singer / Assigned Block Comparison",
-        note: "This table adds the submitted Singer production block and the adjacent H&R assigned block note. H&R was assigned a block but produced no accepted pistols in that block.",
+        title: "Singer / Assigned Serial Number Production Blocks",
+        note: "Combined Singer serial-number table using the submitted Singer block and adjacent H&R assigned block note. H&R was assigned a block but produced no accepted pistols in that block.",
         rows: [
             ["1941", "S800001", "S800500", "500", "Produced", "Singer contract production. Authenticate conservatively due to high collector value."],
             ["1942", "H800501", "H801000", "0", "Assigned, not produced", "Submitted range appears to contain a typo as H800501–H800100. Cleaned here as H800501–H801000; H&R assigned block, no accepted production."],
@@ -75,9 +75,8 @@ function getCurrentPageName() {
 }
 
 function renderProductionBlockTable(config) {
-    var html = '<h2>' + config.title + '</h2>';
-    html += '<div class="warning-box"><strong>Serial Block Caution:</strong> ' + config.note + '</div>';
-    html += '<table><thead><tr><th>Year</th><th>Serial Start</th><th>Serial End</th><th>Reported Quantity</th><th>Status</th><th>Notes</th></tr></thead><tbody>';
+    var html = '<div id="combined-production-note" class="warning-box"><strong>Serial Block Caution:</strong> ' + config.note + '</div>';
+    html += '<table id="combined-production-table"><thead><tr><th>Year</th><th>Serial Start</th><th>Serial End</th><th>Reported Quantity</th><th>Status</th><th>Notes</th></tr></thead><tbody>';
 
     config.rows.forEach(function(row) {
         html += '<tr>' +
@@ -94,32 +93,43 @@ function renderProductionBlockTable(config) {
     return html;
 }
 
+function findFirstRangeHeading() {
+    return Array.prototype.slice.call(document.querySelectorAll('h2')).find(function(h2) {
+        return /Serial Number Range|Serial Number Ranges|Serial Number/.test(h2.textContent);
+    });
+}
+
 function injectManufacturerProductionBlocks() {
     var pageName = getCurrentPageName();
     var config = manufacturerProductionBlocks[pageName];
 
-    if (!config || document.getElementById('cleaned-production-blocks')) {
+    if (!config || document.getElementById('combined-production-table')) {
         return;
     }
 
-    var container = document.createElement('section');
-    container.id = 'cleaned-production-blocks';
-    container.innerHTML = renderProductionBlockTable(config);
+    var rangeHeading = findFirstRangeHeading();
 
-    var firstRangeHeading = Array.prototype.slice.call(document.querySelectorAll('h2')).find(function(h2) {
-        return /Serial Number Range|Serial Number Ranges|Serial Number/.test(h2.textContent);
-    });
-
-    if (firstRangeHeading && firstRangeHeading.parentNode) {
-        firstRangeHeading.parentNode.insertBefore(container, firstRangeHeading);
-    } else {
-        var footer = document.getElementById('site-footer');
-        if (footer && footer.parentNode) {
-            footer.parentNode.insertBefore(container, footer);
-        } else {
-            document.body.appendChild(container);
-        }
+    if (!rangeHeading) {
+        return;
     }
+
+    rangeHeading.textContent = config.title;
+
+    var next = rangeHeading.nextElementSibling;
+
+    if (next && next.tagName && next.tagName.toLowerCase() === 'table') {
+        next.outerHTML = renderProductionBlockTable(config);
+        return;
+    }
+
+    if (next && next.id === 'cleaned-production-blocks') {
+        next.innerHTML = renderProductionBlockTable(config);
+        return;
+    }
+
+    var wrapper = document.createElement('div');
+    wrapper.innerHTML = renderProductionBlockTable(config);
+    rangeHeading.parentNode.insertBefore(wrapper, rangeHeading.nextSibling);
 }
 
 if (document.readyState === 'loading') {
