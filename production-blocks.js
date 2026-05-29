@@ -1,9 +1,18 @@
 var manufacturerProductionBlocks = {
     "colt.html": {
         title: "Colt Serial Number Production Ranges",
-        note: "Serial-number ranges identify production blocks only. They do not authenticate a pistol by themselves. Confirm Colt identification with frame markings, slide markings, inspector initials, P proofs, ordnance mark, finish, barrel, small parts, and provenance.",
+        note: "Serial-number ranges identify production blocks only. They do not authenticate a pistol by themselves. Confirm Colt identification with frame markings, slide markings, inspector initials, P proofs, ordnance mark, finish, barrel, small parts, and provenance. Springfield Armory production used 72571–83855; those serials are outside Colt production even though they fall between early Colt blocks.",
         columns: ["Year", "Serial Start", "Serial End", "Reported Quantity", "Identification Period", "Status", "Notes"],
         rows: [
+            ["1912", "1", "17250", "17,250", "Early M1911", "Produced", "Original Colt military M1911 production. Review early slide legend, United States Property marking, blue finish, early parts, barrel, magazine, and early inspection context."],
+            ["1913", "17251", "60400", "43,150", "Early M1911", "Produced", "Early Colt M1911 production. Confirm by early frame/slide markings, finish, barrel, and period inspection marks."],
+            ["1914", "60401", "72570", "12,170", "Early M1911", "Produced", "Colt M1911 production before the Springfield Armory block."],
+            ["1914–1915", "72571", "83855", "—", "Springfield Armory block", "Not Colt", "This block belongs to Springfield Armory production, not Colt. Included here only to explain the gap in Colt serial numbers."],
+            ["1915", "83856", "107596", "23,741", "WWI M1911", "Produced", "Colt M1911 production resumes after the Springfield Armory block. Review WWI-era slide, frame, finish, barrel, and inspection details."],
+            ["1916", "107597", "133186", "25,590", "WWI M1911", "Produced", "Colt WWI-era M1911 production."],
+            ["1917", "133187", "216986", "83,800", "WWI M1911", "Produced", "Colt wartime M1911 production. Check WWI configuration, finish, barrel, grips, magazine, and any later rebuild updates."],
+            ["1918", "216987", "629500", "412,514", "WWI M1911", "Produced", "Large WWI Colt production block. Many surviving examples may show later service updates, arsenal rebuilds, or replacement parts."],
+            ["1919–1923", "629501", "700000", "—", "Post-WWI gap / verify", "No Colt production block listed", "No Colt U.S. military production block is currently listed on this site for 1919–1923. Treat any pistol in this span as requiring careful source verification."],
             ["1924", "700001", "710000", "10,000", "1924 Transitional", "Produced", "Model of 1911 U.S. Army slide marking may appear with early A1-type features. Verify W.T.G. inspection context, H/G slide marks, HP barrel markings, blue finish, and two-tone magazine details."],
             ["1937", "710001", "711605", "1,605", "Interwar / Early M1911A1", "Produced", "Colt USN / USA block. Verify destination and branch notes against primary references when available."],
             ["1937", "711606", "712349", "744", "Interwar / Early M1911A1", "Produced", "Colt USN block."],
