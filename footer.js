@@ -17,4 +17,22 @@ function renderSiteFooter() {
     `;
 }
 
-document.addEventListener('DOMContentLoaded', renderSiteFooter);
+function loadArchiveStatsScript() {
+    if (!document.querySelector('.stats-grid')) {
+        return;
+    }
+
+    if (document.getElementById('archive-stats-script')) {
+        return;
+    }
+
+    var script = document.createElement('script');
+    script.id = 'archive-stats-script';
+    script.src = './stats.js?v=20260529a';
+    document.body.appendChild(script);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderSiteFooter();
+    loadArchiveStatsScript();
+});
