@@ -21,6 +21,7 @@ var individualRecordPages = {
     "369379": "pistols/369379.html",
     "388733": "pistols/388733.html",
     "817679": "pistols/817679.html",
+    "861420": "pistols/861420.html",
     "1068267": "pistols/1068267.html",
     "1080894": "pistols/1080894.html",
     "1293239": "pistols/1293239.html",
