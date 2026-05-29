@@ -1,134 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Colt 2335201</title>
+<title>Colt M1911A1 2335201 | 1911 Database</title>
 <link rel="stylesheet" href="../style.css">
 <style>
-body{background:#121212;color:#f4f4f4;}
-.record-wrap{max-width:1180px;margin:0 auto;padding:18px;}
-.record-kicker{color:#c9a44c;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin-top:10px;}
-.record-title{font-size:clamp(2rem,5vw,4.2rem);line-height:1.02;margin:8px 0 6px;color:#fff;}
-.record-subtitle{color:#b9b9b9;font-size:1.05rem;max-width:850px;margin-bottom:18px;}
-.top-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start;margin:18px 0 20px;}
-.hero-card,.summary-card,.panel,.note-box,.assessment-panel{background:#1d1d1d;border:1px solid #343434;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.25);}
-.hero-card img{width:100%;display:block;background:#111;}
-.hero-caption{padding:10px 14px;color:#b9b9b9;font-size:.95rem;text-align:center;}
-.summary-card,.panel,.note-box,.assessment-panel{padding:18px;overflow:visible;}
-.summary-card h2,.panel h2,.assessment-panel h2{margin-top:0;color:#fff;}
+body{background:#101010;color:#f5f5f5;}
+.record{max-width:1180px;margin:auto;padding:18px;}
+.kicker{color:#d8b86a;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.78rem;margin-top:10px;}
+.title{font-size:clamp(2.25rem,7vw,4.75rem);line-height:.96;margin:.35em 0 .15em;color:#fff;}
+.subtitle{color:#bdbdbd;max-width:880px;font-size:1.08rem;line-height:1.45;margin-bottom:18px;}
+.hero{background:linear-gradient(180deg,#1e1e1e,#161616);border:1px solid #343434;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.35);}
+.hero img{width:100%;display:block;background:#111;cursor:zoom-in;}
+.hero-caption{padding:12px 14px;text-align:center;color:#b9b9b9;}
+.summary{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start;margin:18px 0 18px;}
+.card{background:#1b1b1b;border:1px solid #333;border-radius:18px;padding:18px;box-shadow:0 12px 30px rgba(0,0,0,.18);}
+.card h2,.card h3{margin-top:0;color:#fff;}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px;}
-.badge{display:inline-flex;border-radius:999px;padding:7px 11px;font-size:.85rem;font-weight:700;background:#274b7a;color:#fff;}
-.badge.gold{background:rgba(201,164,76,.16);color:#f0d38a;border:1px solid rgba(201,164,76,.45);}
-.badge.green{background:rgba(46,107,79,.22);color:#9fe0bd;border:1px solid rgba(100,180,140,.35);}
-.key-list{display:grid;gap:9px;margin-top:10px;}
-.key-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #343434;padding-bottom:8px;}
-.key-row span:first-child{color:#b9b9b9;}
-.key-row span:last-child{text-align:right;font-weight:700;color:#fff;}
-.nav-strip{display:flex;overflow-x:auto;gap:8px;padding:4px 0 14px;margin:0 0 10px;}
-.nav-strip a{flex:0 0 auto;background:#242424;border:1px solid #343434;border-radius:999px;padding:9px 13px;color:#fff;text-decoration:none;font-weight:700;font-size:.9rem;}
-.section-title{font-size:1.65rem;margin:30px 0 12px;color:#fff;border-left:5px solid #c9a44c;padding-left:12px;}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}
-.info-card{background:#1d1d1d;border:1px solid #343434;border-radius:16px;padding:15px;}
-.info-card h3{margin:0 0 7px;color:#f0d38a;font-size:1.05rem;}
-.info-card p{margin:0;color:#b9b9b9;line-height:1.45;}
-.detail-table{width:100%;border-collapse:separate;border-spacing:0 8px;margin-top:10px;}
-.detail-table th{color:#b9b9b9;text-align:left;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;padding:0 10px 4px;}
-.detail-table td{background:#242424;border-top:1px solid #343434;border-bottom:1px solid #343434;padding:12px 10px;vertical-align:top;color:#f3f3f3;}
-.detail-table td:first-child{border-left:1px solid #343434;border-radius:10px 0 0 10px;font-weight:700;color:#fff;}
-.detail-table td:last-child{border-right:1px solid #343434;border-radius:0 10px 10px 0;color:#b9b9b9;}
-.assessment-panel{border-color:rgba(201,164,76,.55);background:linear-gradient(180deg,rgba(201,164,76,.13),rgba(29,29,29,1));}
-.assessment-big{font-size:1.4rem;color:#f0d38a;font-weight:800;margin-bottom:8px;}
-.score-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px;}
-.score-card{background:#242424;border:1px solid #343434;border-radius:14px;padding:14px;text-align:center;}
-.score-card strong{display:block;font-size:1.45rem;color:#f0d38a;margin-top:5px;}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;}
-.gallery figure{margin:0;background:#1d1d1d;border:1px solid #343434;border-radius:16px;overflow:hidden;}
-.gallery img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;background:#111;}
-.gallery figcaption{padding:10px 12px;color:#b9b9b9;font-size:.95rem;}
-.timeline{display:grid;gap:10px;margin-top:12px;}
-.timeline-item{display:grid;grid-template-columns:95px 1fr;gap:12px;background:#1d1d1d;border:1px solid #343434;border-radius:14px;padding:13px;}
-.timeline-item strong{color:#f0d38a;}
-.timeline-item span,.note-box{color:#b9b9b9;line-height:1.5;}
-.note-box strong{color:#fff;}
-ul.clean-list{margin:0;padding-left:19px;color:#b9b9b9;line-height:1.55;}
-ul.clean-list li{margin-bottom:6px;}
-.print-note{font-size:.9rem;color:#b9b9b9;margin-top:8px;}
-@media(max-width:850px){.record-wrap{padding:14px 12px;}.top-grid{grid-template-columns:1fr;}.detail-table,.detail-table tbody,.detail-table tr,.detail-table td,.detail-table th{display:block;width:100%;}.detail-table th{display:none;}.detail-table tr{margin-bottom:10px;background:#242424;border:1px solid #343434;border-radius:14px;padding:8px;display:block;}.detail-table td{border:none!important;border-radius:0!important;background:transparent;padding:6px 4px;}.detail-table td:first-child{color:#f0d38a;}.timeline-item{grid-template-columns:1fr;}}
+.badge{background:#263f67;color:#fff;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.84rem;}
+.badge.gold{background:#3a3020;color:#f0d38a;border:1px solid #806b39;}
+.badge.green{background:#20372b;color:#a8e7c1;border:1px solid #3d7a58;}
+.row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #343434;padding:9px 0;}
+.row span:first-child{color:#aaa;}.row span:last-child{text-align:right;font-weight:800;color:#fff;}
+.nav{display:flex;gap:8px;overflow-x:auto;margin:12px 0 26px;padding-bottom:8px;}
+.nav a{white-space:nowrap;background:#222;border:1px solid #363636;border-radius:999px;padding:9px 13px;color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;}
+.nav a:hover{border-color:#d8b86a;color:#f0d38a;}
+.grade{background:linear-gradient(180deg,#2b2418,#191919);border-color:#7f6734;}
+.stars{font-size:1.55rem;color:#f0d38a;letter-spacing:.08em;margin:2px 0 8px;}
+.grade-line{font-size:1.45rem;color:#f0d38a;font-weight:900;margin-bottom:8px;}
+.section{font-size:1.65rem;border-left:5px solid #d8b86a;padding-left:12px;margin:32px 0 14px;color:#fff;}
+.why{font-size:1.08rem;line-height:1.55;color:#ddd;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}
+.mini{background:#1b1b1b;border:1px solid #333;border-radius:16px;padding:15px;}
+.mini h3{margin:0 0 8px;color:#f0d38a;font-size:1.05rem;}.mini p{margin:0;color:#bdbdbd;line-height:1.45;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px;}
+.gallery figure{margin:0;background:#1b1b1b;border:1px solid #333;border-radius:16px;overflow:hidden;}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;cursor:zoom-in;background:#111;}
+.gallery figcaption{padding:10px 12px;color:#bdbdbd;font-size:.95rem;line-height:1.35;}
+.table{width:100%;border-collapse:separate;border-spacing:0 8px;}
+.table td{background:#222;border:1px solid #333;padding:12px;vertical-align:top;}.table td:first-child{color:#f0d38a;font-weight:900;border-radius:10px 0 0 10px;}.table td:last-child{color:#bdbdbd;border-radius:0 10px 10px 0;}
+.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;}.score{background:#222;border:1px solid #333;border-radius:14px;padding:14px;text-align:center;color:#cfcfcf;}.score strong{display:block;color:#f0d38a;font-size:1.55rem;margin-top:4px;}
+.timeline-wrap{background:#1b1b1b;border:1px solid #333;border-radius:18px;padding:18px;}.timeline-bar{position:relative;height:70px;margin:10px 8px 4px;border-bottom:3px solid #555;}.tick{position:absolute;bottom:-28px;transform:translateX(-50%);color:#aaa;font-weight:800;font-size:.9rem;}.marker{position:absolute;bottom:-7px;left:92%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:#f0d38a;box-shadow:0 0 0 6px rgba(240,211,138,.18);}.marker-label{position:absolute;left:92%;top:0;transform:translateX(-50%);color:#f0d38a;font-weight:900;text-align:center;white-space:nowrap;}
+.lightbox{display:none;position:fixed;z-index:9999;inset:0;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:18px;}.lightbox.open{display:flex;}.lightbox img{max-width:96vw;max-height:88vh;border-radius:10px;border:1px solid #444;}.lightbox button{position:fixed;top:14px;right:14px;background:#222;color:#fff;border:1px solid #555;border-radius:999px;padding:10px 14px;font-weight:900;}
+.note{color:#bdbdbd;line-height:1.55;}.note strong{color:#fff;}ul.clean{margin:0;padding-left:20px;color:#bdbdbd;line-height:1.55;}ul.clean li{margin-bottom:6px;}
+@media(max-width:850px){.record{padding:12px}.summary{grid-template-columns:1fr}.title{font-size:clamp(2rem,12vw,3.4rem)}.hero img{min-height:52vh;object-fit:cover}.row{font-size:.95rem}.table,.table tbody,.table tr,.table td{display:block;width:100%}.table tr{background:#222;border:1px solid #333;border-radius:14px;margin-bottom:10px;padding:8px}.table td{border:0;background:transparent;padding:5px}.table td:first-child,.table td:last-child{border-radius:0}.marker{left:92%}.marker-label{left:92%;font-size:.8rem}.tick{font-size:.8rem}}
 </style>
 </head>
 <body>
 <div id="site-header"></div>
-<div class="record-wrap"><div id="recordContainer"></div></div>
+<main class="record">
+<div class="kicker">1911 Database Individual Record</div>
+<h1 class="title">Colt M1911A1<br>Serial Number 2335201</h1>
+<p class="subtitle">Photo-documented late-war Colt M1911A1 research record preserving observed markings, component notes, CMP provenance, originality assessment, and open documentation items.</p>
+
+<div class="summary">
+<section class="hero"><img src="../photos/2335201-right.jpg" alt="Colt M1911A1 Serial Number 2335201" onclick="openLightbox(this.src)"><div class="hero-caption">Featured view — Colt M1911A1 Serial Number 2335201</div></section>
+<aside class="card"><h2>Quick Summary</h2><div class="badges"><span class="badge">Colt</span><span class="badge">M1911A1</span><span class="badge">1945</span><span class="badge green">CMP Released</span><span class="badge gold">High Confidence Original</span></div><div class="row"><span>Serial</span><span>2335201</span></div><div class="row"><span>Manufacturer</span><span>Colt</span></div><div class="row"><span>Model</span><span>M1911A1</span></div><div class="row"><span>Production Year</span><span>1945</span></div><div class="row"><span>Serial Range</span><span>2244804 - 2380013</span></div><div class="row"><span>Branch</span><span>U.S. Army</span></div><div class="row"><span>Record Type</span><span>CMP / Private Collection</span></div></aside>
+</div>
+
+<nav class="nav"><a href="#grade">Grade</a><a href="#photos">Evidence Gallery</a><a href="#why">Why It Matters</a><a href="#features">Features</a><a href="#score">Score</a><a href="#timeline">Timeline</a><a href="#open">Open Items</a></nav>
+
+<section id="grade" class="card grade"><h2>Collector Grade</h2><div class="stars">★★★★★</div><div class="grade-line">High Confidence Original Configuration</div><p>Serial number 2335201 falls within late-war Colt production. Current photographs document a Colt frame, Colt slide, G.H.D. inspection mark, P proof, Colt barrel with square P proof on the lower lug, Coltwood-style grips, and late-war M1911A1 configuration features.</p><p>No arsenal rebuild markings have been documented in the current photo set. This assessment remains evidence-based and should be updated as additional photographs or paperwork become available.</p></section>
+
+<h2 id="photos" class="section">Evidence Gallery</h2><div class="gallery"><figure><img src="../photos/2335201-right.jpg" alt="Right side" onclick="openLightbox(this.src)"><figcaption><strong>Right side.</strong> Serial, property marking, and U.S. Army designation area.</figcaption></figure><figure><img src="../photos/2335201-left.jpg" alt="Left side" onclick="openLightbox(this.src)"><figcaption><strong>Left side.</strong> Colt slide rollmark and frame details.</figcaption></figure><figure><img src="../images/2335201/serial.jpg" alt="Serial number" onclick="openLightbox(this.src)"><figcaption><strong>Serial number.</strong> Photo support for the individual record identity.</figcaption></figure><figure><img src="../images/2335201/inspector.jpg" alt="Inspector mark" onclick="openLightbox(this.src)"><figcaption><strong>G.H.D. and P proof area.</strong> Supports late-war Colt inspection context.</figcaption></figure><figure><img src="../images/2335201/slide.jpg" alt="Slide rollmark" onclick="openLightbox(this.src)"><figcaption><strong>Colt slide.</strong> Patent legend, Rampant Colt, and Hartford address.</figcaption></figure><figure><img src="../images/2335201/barrel.jpg" alt="Barrel proof" onclick="openLightbox(this.src)"><figcaption><strong>Barrel lug.</strong> Square P proof evidence supporting Colt barrel assessment.</figcaption></figure></div>
+
+<h2 id="why" class="section">Why This Pistol Matters</h2><section class="card"><p class="why">Serial number 2335201 represents late-war Colt M1911A1 production during the final year of World War II. The pistol is important to document because it combines CMP provenance, a Colt frame, Colt slide, visible G.H.D. inspection context, square P barrel proof evidence, Coltwood-style grips, and no currently documented arsenal rebuild markings.</p><p class="why">For the 1911 Database, this record serves as a flagship example of how individual pistols should be documented: photographs first, observations second, and collector conclusions clearly separated from confirmed evidence.</p></section>
+
+<h2 id="features" class="section">Component Review</h2><table class="table"><tr><td>Frame</td><td>Colt frame, serial 2335201. Correct manufacturer and production range.</td></tr><tr><td>Slide</td><td>Colt rollmarks with Rampant Colt. Consistent with late-war Colt slide.</td></tr><tr><td>Barrel</td><td>Square P proof on lower lug. Consistent with late WWII Colt barrel.</td></tr><tr><td>Grips</td><td>Brown checkered Coltwood-style grips. Correct late-war style.</td></tr><tr><td>Hammer</td><td>Wide-spur checkered hammer observed. Appears correct from current photos.</td></tr><tr><td>Trigger</td><td>Short M1911A1-style trigger observed. Appears correct from current photos.</td></tr><tr><td>Mainspring Housing</td><td>Arched, checkered housing observed. Correct M1911A1 style.</td></tr><tr><td>Sights</td><td>Standard GI front and rear sights. No target-sight modification observed.</td></tr><tr><td>Magazine</td><td>.45 magazine present with witness holes and visible 45 marking. Baseplate maker mark still needs documentation.</td></tr><tr><td>Rebuild Marks</td><td>No arsenal rebuild marks documented in the current photo set.</td></tr></table>
+
+<h2 id="score" class="section">Originality Scorecard</h2><div class="scores"><div class="score">Frame<strong>10/10</strong></div><div class="score">Slide<strong>10/10</strong></div><div class="score">Barrel<strong>9/10</strong></div><div class="score">Grips<strong>10/10</strong></div><div class="score">Small Parts<strong>9/10</strong></div><div class="score">Finish<strong>9/10</strong></div></div><p class="note">Preliminary overall score: <strong>57/60</strong>. This is a research aid, not a formal appraisal or authentication.</p>
+
+<h2 id="timeline" class="section">WWII Colt Production Marker</h2><section class="timeline-wrap"><p class="note">Serial number 2335201 sits late in Colt's 1945 M1911A1 production range.</p><div class="timeline-bar"><div class="marker-label">2335201<br>1945</div><div class="marker"></div><span class="tick" style="left:0%">1943</span><span class="tick" style="left:50%">1944</span><span class="tick" style="left:100%">1945</span></div></section>
+
+<h2 class="section">Production and Historical Context</h2><div class="cards"><div class="mini"><h3>Production</h3><p>Serial number 2335201 was manufactured during 1945, the final year of World War II, within late Colt M1911A1 production.</p></div><div class="mini"><h3>Inspector</h3><p>G.H.D. refers to Brigadier General Guy H. Drewry, associated with wartime inspection of M1911A1 pistols.</p></div><div class="mini"><h3>Wartime Context</h3><p>Colt was producing M1911A1 pistols alongside other wartime contractors including Ithaca, Remington Rand, Union Switch &amp; Signal, and Singer.</p></div><div class="mini"><h3>Collector Interest</h3><p>Late-war Colt examples are desirable when they retain correct frame, slide, barrel, small parts, finish, and documentation.</p></div></div>
+
+<h2 class="section">Provenance Timeline</h2><div class="cards"><div class="mini"><h3>1945</h3><p>Manufactured by Colt during late WWII M1911A1 production.</p></div><div class="mini"><h3>Service</h3><p>Military service history unknown; pistol remains a U.S. military-marked M1911A1 example.</p></div><div class="mini"><h3>CMP</h3><p>Released through the Civilian Marksmanship Program.</p></div><div class="mini"><h3>Archive</h3><p>Documented in private collection and archived in the 1911 Database.</p></div></div>
+
+<h2 id="open" class="section">Open Documentation Items</h2><section class="card note"><ul class="clean"><li>Dedicated left trigger guard stamp close-up.</li><li>Dedicated right trigger guard stamp close-up.</li><li>Top of slide proof mark close-up.</li><li>Magazine baseplate and spine markings.</li><li>Barrel hood and chamber area markings.</li><li>Interior slide markings.</li><li>Clear bore condition note.</li></ul></section>
+
+<h2 class="section">Research Notes</h2><section class="card note"><p><strong>Research method:</strong> This record separates confirmed observations from collector conclusions. Serial range supports late-war Colt production, but serial range alone is not treated as proof of originality.</p><p>The current assessment is based on frame, slide, inspector mark, proof marks, barrel lug marking, visible small parts, grips, finish consistency, CMP provenance, and the absence of documented arsenal rebuild markings in the current photo set.</p></section><section class="card note"><strong>Research Disclaimer:</strong> This record is a collector reference and research aid. It is not a factory letter, formal appraisal, or final authentication. Authenticity, originality, and value should be independently verified using complete photographs, serial references, known examples, and qualified expert review.</section>
+</main>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()"><button type="button">Close</button><img id="lightboxImg" src="" alt="Expanded pistol documentation image"></div>
 <div id="site-footer"></div>
-<script src="../header.js"></script>
-<script src="../footer.js"></script>
-<script src="../pistol-records.js"></script>
-<script>
-const pistol = pistolRecords['2335201'];
-const html = `
-<div class="record-kicker">1911 Database Individual Record</div>
-<h1 class="record-title">Colt M1911A1<br>Serial Number ${pistol.serial_number}</h1>
-<p class="record-subtitle">A photo-documented late-war Colt M1911A1 research record preserving serial range data, observed markings, collector notes, CMP provenance, originality assessment, and open documentation items.</p>
-<div class="top-grid">
-    <div class="hero-card"><img src="${pistol.photos.right}" alt="Colt M1911A1 Serial Number ${pistol.serial_number}"><div class="hero-caption">Featured view — Colt M1911A1 Serial Number ${pistol.serial_number}</div></div>
-    <aside class="summary-card">
-        <h2>Quick Summary</h2>
-        <div class="badges"><span class="badge">Colt</span><span class="badge">M1911A1</span><span class="badge">1945</span><span class="badge green">CMP Released</span><span class="badge gold">High Confidence Original</span></div>
-        <div class="key-list">
-            <div class="key-row"><span>Serial</span><span>${pistol.serial_number}</span></div>
-            <div class="key-row"><span>Manufacturer</span><span>Colt</span></div>
-            <div class="key-row"><span>Model</span><span>M1911A1</span></div>
-            <div class="key-row"><span>Year</span><span>1945</span></div>
-            <div class="key-row"><span>Range</span><span>${pistol.serial_range}</span></div>
-            <div class="key-row"><span>Branch</span><span>U.S. Army</span></div>
-            <div class="key-row"><span>Status</span><span>CMP / Private Collection</span></div>
-        </div>
-    </aside>
-</div>
-<nav class="nav-strip"><a href="#assessment">Assessment</a><a href="#photos">Photos</a><a href="#identity">Identity</a><a href="#features">Features</a><a href="#score">Score</a><a href="#history">History</a><a href="#open">Open Items</a></nav>
-<section id="assessment" class="assessment-panel"><h2>Collector Assessment</h2><div class="assessment-big">High Confidence Original Configuration</div><p>Serial number ${pistol.serial_number} falls within late-war Colt production. Current photographs document a Colt frame, Colt slide, G.H.D. inspection mark, P proof, Colt barrel with square P proof on the lower lug, Coltwood-style grips, and late-war M1911A1 configuration features.</p><p>No arsenal rebuild markings have been documented in the current photo set. This assessment remains evidence-based and should be updated as additional photographs or paperwork become available.</p></section>
-<h2 id="photos" class="section-title">Photo Documentation</h2>
-<div class="gallery">
-<figure><img src="${pistol.photos.right}" alt="Right side"><figcaption>Right side — serial, property marking, and U.S. Army designation area.</figcaption></figure>
-<figure><img src="${pistol.photos.left}" alt="Left side"><figcaption>Left side — Colt slide rollmark and frame details.</figcaption></figure>
-<figure><img src="${pistol.photos.serial}" alt="Serial number"><figcaption>Serial number and right-side frame markings.</figcaption></figure>
-<figure><img src="${pistol.photos.inspector}" alt="Inspector mark"><figcaption>G.H.D. inspector mark and P proof area.</figcaption></figure>
-<figure><img src="${pistol.photos.slide}" alt="Slide rollmarks"><figcaption>Colt patent legend, Rampant Colt, and Hartford address.</figcaption></figure>
-<figure><img src="${pistol.photos.barrel}" alt="Barrel markings"><figcaption>Barrel and lug markings, including square P proof evidence.</figcaption></figure>
-</div>
-<h2 id="identity" class="section-title">Identity and Evidence</h2>
-<div class="card-grid">
-<div class="info-card"><h3>Frame</h3><p>Colt frame with serial number ${pistol.serial_number}. U.S. property and M1911A1 U.S. Army markings are photo documented.</p></div>
-<div class="info-card"><h3>Slide</h3><p>Colt slide with patent legend, Rampant Colt, and Hartford address. Finish appears consistent with frame.</p></div>
-<div class="info-card"><h3>Inspector Mark</h3><p>G.H.D. inspection mark observed on the left side of the frame.</p></div>
-<div class="info-card"><h3>Proof Marks</h3><p>P proof observed near the magazine release area. Top-of-slide proof remains an open documentation item.</p></div>
-<div class="info-card"><h3>Barrel</h3><p>Colt barrel assessment supported by square P proof observed on the lower barrel lug.</p></div>
-<div class="info-card"><h3>Provenance</h3><p>Recorded as a CMP released pistol in private collection documentation.</p></div>
-</div>
-<h2 id="features" class="section-title">Component Review</h2>
-<table class="detail-table">
-<tr><th>Component</th><th>Observation</th><th>Assessment</th></tr>
-<tr><td>Frame</td><td>Colt frame, serial ${pistol.serial_number}</td><td>Correct manufacturer and production range.</td></tr>
-<tr><td>Slide</td><td>Colt rollmarks with Rampant Colt</td><td>Consistent with late-war Colt slide.</td></tr>
-<tr><td>Barrel</td><td>Square P proof on lower lug</td><td>Consistent with late WWII Colt barrel.</td></tr>
-<tr><td>Grips</td><td>Brown checkered Coltwood-style grips</td><td>Correct late-war style.</td></tr>
-<tr><td>Hammer</td><td>Wide-spur checkered hammer observed</td><td>Appears correct from current photos.</td></tr>
-<tr><td>Trigger</td><td>Short M1911A1-style trigger observed</td><td>Appears correct from current photos.</td></tr>
-<tr><td>Mainspring Housing</td><td>Arched, checkered housing observed</td><td>Correct M1911A1 style.</td></tr>
-<tr><td>Sights</td><td>Standard GI front and rear sights</td><td>No target-sight modification observed.</td></tr>
-<tr><td>Magazine</td><td>.45 magazine present; witness holes and 45 marking visible</td><td>Baseplate maker mark still needs documentation.</td></tr>
-<tr><td>Rebuild Marks</td><td>No arsenal rebuild marks documented</td><td>Continue to record any newly found marks.</td></tr>
-</table>
-<h2 id="score" class="section-title">Originality Scorecard</h2>
-<div class="score-grid"><div class="score-card">Frame<strong>10/10</strong></div><div class="score-card">Slide<strong>10/10</strong></div><div class="score-card">Barrel<strong>9/10</strong></div><div class="score-card">Grips<strong>10/10</strong></div><div class="score-card">Small Parts<strong>9/10</strong></div><div class="score-card">Finish<strong>9/10</strong></div></div>
-<p class="print-note">Preliminary overall score: <strong>57/60</strong>. This score is a research aid only and should change as new evidence is added.</p>
-<h2 id="history" class="section-title">Production and Historical Context</h2>
-<div class="card-grid"><div class="info-card"><h3>Production</h3><p>Serial number ${pistol.serial_number} was manufactured during 1945, the final year of World War II, within late Colt M1911A1 production.</p></div><div class="info-card"><h3>Inspector</h3><p>G.H.D. refers to Brigadier General Guy H. Drewry, associated with wartime inspection of M1911A1 pistols.</p></div><div class="info-card"><h3>Wartime Context</h3><p>Colt was producing M1911A1 pistols alongside other wartime contractors including Ithaca, Remington Rand, Union Switch &amp; Signal, and Singer.</p></div><div class="info-card"><h3>Collector Interest</h3><p>Late-war Colt examples are desirable when they retain correct frame, slide, barrel, small parts, finish, and documentation.</p></div></div>
-<h2 class="section-title">Provenance Timeline</h2><div class="timeline"><div class="timeline-item"><strong>1945</strong><span>Manufactured by Colt during late WWII M1911A1 production.</span></div><div class="timeline-item"><strong>Service</strong><span>Military service history unknown; pistol remains a U.S. military-marked M1911A1 example.</span></div><div class="timeline-item"><strong>CMP</strong><span>Released through the Civilian Marksmanship Program.</span></div><div class="timeline-item"><strong>Archive</strong><span>Documented in private collection and archived in the 1911 Database.</span></div></div>
-<h2 id="open" class="section-title">Open Documentation Items</h2><div class="note-box"><ul class="clean-list"><li>Dedicated left trigger guard stamp close-up.</li><li>Dedicated right trigger guard stamp close-up.</li><li>Top of slide proof mark close-up.</li><li>Magazine baseplate and spine markings.</li><li>Barrel hood and chamber area markings.</li><li>Interior slide markings.</li><li>Clear bore condition note.</li></ul></div>
-<h2 class="section-title">Research Notes</h2><div class="note-box"><p><strong>Research method:</strong> This record separates confirmed observations from collector conclusions. Serial range supports late-war Colt production, but serial range alone is not treated as proof of originality.</p><p>The current assessment is based on frame, slide, inspector mark, proof marks, barrel lug marking, visible small parts, grips, finish consistency, CMP provenance, and the absence of documented arsenal rebuild markings in the current photo set.</p></div>
-<div class="note-box"><strong>Research Disclaimer:</strong> This record is a collector reference and research aid. It is not a factory letter, formal appraisal, or final authentication. Authenticity, originality, and value should be independently verified using complete photographs, serial references, known examples, and qualified expert review.</div>
-`;
-document.getElementById('recordContainer').innerHTML = html;
-</script>
+<script src="../header.js"></script><script src="../footer.js"></script><script>function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');}function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.getElementById('lightboxImg').src='';}</script>
 </body>
 </html>
