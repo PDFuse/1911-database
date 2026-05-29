@@ -68,7 +68,18 @@ function loadArchiveStatsScript() {
     }
 }
 
+function loadFoiaStatusScript() {
+    var path = window.location.pathname || '';
+
+    if (path.indexOf('/pistols/') === -1) {
+        return;
+    }
+
+    loadScriptOnce('foia-status-script', '../foia-status.js?v=20260529a');
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     renderSiteFooter();
     loadArchiveStatsScript();
+    loadFoiaStatusScript();
 });
