@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Colt M1911A1 Transitional 702585 | 1911 Database</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+body{background:#101010;color:#f5f5f5;}
+.record{max-width:1180px;margin:auto;padding:18px;}
+.kicker{color:#d8b86a;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.78rem;margin-top:10px;}
+.title{font-size:clamp(2.25rem,7vw,4.75rem);line-height:.96;margin:.35em 0 .15em;color:#fff;}
+.subtitle{color:#bdbdbd;max-width:880px;font-size:1.08rem;line-height:1.45;margin-bottom:18px;}
+.hero{background:linear-gradient(180deg,#1e1e1e,#161616);border:1px solid #343434;border-radius:22px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,.35);}
+.hero img{width:100%;display:block;background:#111;cursor:zoom-in;}
+.hero-caption{padding:12px 14px;text-align:center;color:#b9b9b9;}
+.summary{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start;margin:18px 0 18px;}
+.card{background:#1b1b1b;border:1px solid #333;border-radius:18px;padding:18px;box-shadow:0 12px 30px rgba(0,0,0,.18);}
+.card h2,.card h3{margin-top:0;color:#fff;}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px;}
+.badge{background:#263f67;color:#fff;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.84rem;}
+.badge.gold{background:#3a3020;color:#f0d38a;border:1px solid #806b39;}
+.badge.green{background:#20372b;color:#a8e7c1;border:1px solid #3d7a58;}
+.row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #343434;padding:9px 0;}
+.row span:first-child{color:#aaa;}.row span:last-child{text-align:right;font-weight:800;color:#fff;}
+.nav{display:flex;gap:8px;overflow-x:auto;margin:12px 0 26px;padding-bottom:8px;}
+.nav a{white-space:nowrap;background:#222;border:1px solid #363636;border-radius:999px;padding:9px 13px;color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;}
+.nav a:hover{border-color:#d8b86a;color:#f0d38a;}
+.grade{background:linear-gradient(180deg,#2b2418,#191919);border-color:#7f6734;}
+.stars{font-size:1.55rem;color:#f0d38a;letter-spacing:.08em;margin:2px 0 8px;}
+.grade-line{font-size:1.45rem;color:#f0d38a;font-weight:900;margin-bottom:8px;}
+.section{font-size:1.65rem;border-left:5px solid #d8b86a;padding-left:12px;margin:32px 0 14px;color:#fff;}
+.why{font-size:1.08rem;line-height:1.55;color:#ddd;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}
+.mini{background:#1b1b1b;border:1px solid #333;border-radius:16px;padding:15px;}
+.mini h3{margin:0 0 8px;color:#f0d38a;font-size:1.05rem;}.mini p{margin:0;color:#bdbdbd;line-height:1.45;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px;}
+.gallery figure{margin:0;background:#1b1b1b;border:1px solid #333;border-radius:16px;overflow:hidden;}
+.gallery img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;cursor:zoom-in;background:#111;}
+.gallery figcaption{padding:10px 12px;color:#bdbdbd;font-size:.95rem;line-height:1.35;}
+.table{width:100%;border-collapse:separate;border-spacing:0 8px;}
+.table td{background:#222;border:1px solid #333;padding:12px;vertical-align:top;}.table td:first-child{color:#f0d38a;font-weight:900;border-radius:10px 0 0 10px;}.table td:last-child{color:#bdbdbd;border-radius:0 10px 10px 0;}
+.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;}.score{background:#222;border:1px solid #333;border-radius:14px;padding:14px;text-align:center;color:#cfcfcf;}.score strong{display:block;color:#f0d38a;font-size:1.55rem;margin-top:4px;}
+.timeline-wrap{background:#1b1b1b;border:1px solid #333;border-radius:18px;padding:18px;}.timeline-bar{position:relative;height:70px;margin:10px 8px 4px;border-bottom:3px solid #555;}.tick{position:absolute;bottom:-28px;transform:translateX(-50%);color:#aaa;font-weight:800;font-size:.9rem;}.marker{position:absolute;bottom:-7px;left:24%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:#f0d38a;box-shadow:0 0 0 6px rgba(240,211,138,.18);}.marker-label{position:absolute;left:24%;top:0;transform:translateX(-50%);color:#f0d38a;font-weight:900;text-align:center;white-space:nowrap;}
+.lightbox{display:none;position:fixed;z-index:9999;inset:0;background:rgba(0,0,0,.92);align-items:center;justify-content:center;padding:18px;}.lightbox.open{display:flex;}.lightbox img{max-width:96vw;max-height:88vh;border-radius:10px;border:1px solid #444;}.lightbox button{position:fixed;top:14px;right:14px;background:#222;color:#fff;border:1px solid #555;border-radius:999px;padding:10px 14px;font-weight:900;}
+.note{color:#bdbdbd;line-height:1.55;}.note strong{color:#fff;}ul.clean{margin:0;padding-left:20px;color:#bdbdbd;line-height:1.55;}ul.clean li{margin-bottom:6px;}
+@media(max-width:850px){.record{padding:12px}.summary{grid-template-columns:1fr}.title{font-size:clamp(2rem,12vw,3.4rem)}.hero img{min-height:52vh;object-fit:cover}.row{font-size:.95rem}.table,.table tbody,.table tr,.table td{display:block;width:100%}.table tr{background:#222;border:1px solid #333;border-radius:14px;margin-bottom:10px;padding:8px}.table td{border:0;background:transparent;padding:5px}.table td:first-child,.table td:last-child{border-radius:0}.marker{left:24%}.marker-label{left:24%;font-size:.8rem}.tick{font-size:.8rem}}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+<main class="record">
+<div class="kicker">1911 Database Notable Individual Record</div>
+<h1 class="title">Colt M1911A1 Transitional<br>Serial Number 702585</h1>
+<p class="subtitle">GunBroker-observed 1924 Colt Transitional Model M1911A1 record documenting a high-condition early M1911A1 transitional pistol, Springfield Armory delivery context, original blue finish, correct two-tone magazine, and possible but unverified Major General Julian S. Hatcher association.</p>
+
+<div class="summary">
+<section class="hero"><img src="../photos/702585-right.jpg" alt="Colt M1911A1 Transitional Serial Number 702585" onclick="openLightbox(this.src)"><div class="hero-caption">Featured view — Colt M1911A1 Transitional Serial Number 702585</div></section>
+<aside class="card"><h2>Quick Summary</h2><div class="badges"><span class="badge">Colt</span><span class="badge">M1911A1 Transitional</span><span class="badge">1924</span><span class="badge gold">Notable Example</span><span class="badge green">Springfield Armory Delivery</span><span class="badge gold">Possible Hatcher Association</span></div><div class="row"><span>Serial</span><span>702585</span></div><div class="row"><span>Manufacturer</span><span>Colt</span></div><div class="row"><span>Model</span><span>M1911A1 Transitional</span></div><div class="row"><span>Production Year</span><span>1924</span></div><div class="row"><span>Serial Range</span><span>700000 range</span></div><div class="row"><span>Finish</span><span>Original blue</span></div><div class="row"><span>Record Type</span><span>GunBroker / Notable Historical Example</span></div></aside>
+</div>
+
+<nav class="nav"><a href="#grade">Grade</a><a href="#photos">Evidence Gallery</a><a href="#why">Why It Matters</a><a href="#features">Features</a><a href="#score">Score</a><a href="#timeline">Timeline</a><a href="#open">Open Items</a></nav>
+
+<section id="grade" class="card grade"><h2>Collector Grade</h2><div class="stars">★★★★★</div><div class="grade-line">Premier Collector-Grade Transitional Colt M1911A1</div><p>Serial number 702585 is a 1924 Colt M1911A1 Transitional Model, part of the early production run that incorporated the design changes that became standard on the M1911A1. The listing described this pistol as being delivered to Springfield Armory and retaining approximately 90–92% original finish.</p><p>The possible association with Major General Julian S. Hatcher is historically interesting but remains unverified. This pistol stands on its own as a significant Transitional Model even without confirmed Hatcher ownership.</p></section>
+
+<h2 id="photos" class="section">Evidence Gallery</h2><div class="gallery"><figure><img src="../photos/702585-right.jpg" alt="Right side" onclick="openLightbox(this.src)"><figcaption><strong>Right side.</strong> Full pistol view documenting Transitional Model configuration.</figcaption></figure><figure><img src="../photos/702585-left.jpg" alt="Left side" onclick="openLightbox(this.src)"><figcaption><strong>Left side.</strong> Colt slide markings, frame features, and original blue finish context.</figcaption></figure><figure><img src="../images/702585/serial.jpg" alt="Serial number" onclick="openLightbox(this.src)"><figcaption><strong>Serial number.</strong> Serial number 702585 places this pistol in the 1924 Transitional Model range.</figcaption></figure><figure><img src="../images/702585/barrel.jpg" alt="Barrel markings" onclick="openLightbox(this.src)"><figcaption><strong>Barrel.</strong> H/P style barrel marking visible in the photo set; close-up documentation should be retained.</figcaption></figure><figure><img src="../images/702585/magazine.jpg" alt="Two-tone magazine" onclick="openLightbox(this.src)"><figcaption><strong>Magazine.</strong> Correct early two-tone magazine shown with the pistol.</figcaption></figure><figure><img src="../images/702585/plaque.jpg" alt="Hatcher Hall plaque" onclick="openLightbox(this.src)"><figcaption><strong>Hatcher Hall plaque.</strong> Plaque references inaugural rounds fired from MG Hatcher's M1911A1 pistol on 5 February 1987.</figcaption></figure></div>
+
+<h2 id="why" class="section">Why This Pistol Matters</h2><section class="card"><p class="why">Serial number 702585 is important because it represents the 1924 Transitional Model production run that bridged the original M1911 and the standardized M1911A1. These pistols incorporated the early A1 improvements requested after service experience with the original M1911.</p><p class="why">The possible Hatcher association makes this pistol especially worthy of documentation, but the connection should remain marked as unverified unless primary-source records are found. The firearm is historically significant even without the provenance claim because of its Transitional Model status, condition, Springfield Armory delivery context, and correct early components.</p></section>
+
+<h2 id="features" class="section">Component Review</h2><table class="table"><tr><td>Frame</td><td>Colt Transitional Model frame, serial number 702585, with M1911A1 transitional features including frame relief cuts behind the trigger.</td></tr><tr><td>Slide</td><td>Colt military slide with MODEL OF 1911 U.S. ARMY marking as shown in the photo set.</td></tr><tr><td>Finish</td><td>Original commercial-style blue finish. Seller described approximately 90–92% original finish with storage and handling wear.</td></tr><tr><td>Trigger</td><td>Short trigger, one of the design changes that separated the Transitional Model from the earlier M1911 pattern.</td></tr><tr><td>Mainspring Housing</td><td>Arched mainspring housing with lanyard loop, consistent with early M1911A1 transitional configuration.</td></tr><tr><td>Grip Safety</td><td>Improved/extended grip safety tang consistent with the A1 design evolution.</td></tr><tr><td>Barrel</td><td>H/P marked barrel visible in the photo set. Bore described by seller as strong with light frosting.</td></tr><tr><td>Magazine</td><td>Correct early two-tone magazine shown with the pistol.</td></tr><tr><td>Condition</td><td>Seller described excellent mechanical condition and approximately 90–92% original finish remaining.</td></tr><tr><td>Provenance</td><td>GunBroker listing, observed 29 May 2026. Possible Julian S. Hatcher association remains unverified.</td></tr></table>
+
+<h2 id="score" class="section">Originality and Significance Scorecard</h2><div class="scores"><div class="score">Authenticity<strong>10/10</strong></div><div class="score">Originality<strong>10/10</strong></div><div class="score">Finish<strong>9/10</strong></div><div class="score">Components<strong>10/10</strong></div><div class="score">Historical Significance<strong>10/10</strong></div><div class="score">Provenance Potential<strong>10/10</strong></div></div><p class="note">Preliminary overall score: <strong>59/60</strong>. Provenance potential reflects the possible Hatcher association, not confirmed ownership.</p>
+
+<h2 id="timeline" class="section">Transitional Model Production Marker</h2><section class="timeline-wrap"><p class="note">Serial number 702585 falls in the 1924 Colt Transitional Model range associated with the early M1911A1 design changes.</p><div class="timeline-bar"><div class="marker-label">702585<br>1924</div><div class="marker"></div><span class="tick" style="left:0%">1918</span><span class="tick" style="left:50%">1924</span><span class="tick" style="left:100%">1937</span></div></section>
+
+<h2 class="section">Production and Historical Context</h2><div class="cards"><div class="mini"><h3>Production</h3><p>Serial number 702585 was produced in 1924 as part of the Colt Transitional Model run.</p></div><div class="mini"><h3>Transitional Features</h3><p>The pistol documents the shift from M1911 to M1911A1 features, including short trigger, arched mainspring housing, and frame relief cuts.</p></div><div class="mini"><h3>Springfield Armory</h3><p>The auction description states the pistol was delivered to Springfield Armory, a key institution in U.S. small arms development.</p></div><div class="mini"><h3>Collector Interest</h3><p>High-condition Transitional Model pistols are premium U.S. military Colt collector examples.</p></div></div>
+
+<h2 class="section">Provenance Timeline</h2><div class="cards"><div class="mini"><h3>1924</h3><p>Manufactured by Colt as part of the Transitional Model production run.</p></div><div class="mini"><h3>Springfield Armory</h3><p>Listing states the pistol was delivered to Springfield Armory.</p></div><div class="mini"><h3>1987</h3><p>Associated plaque references inaugural rounds fired from MG Hatcher's M1911A1 pistol in Hatcher Hall Test Range on 5 February 1987.</p></div><div class="mini"><h3>29 May 2026</h3><p>Observed on GunBroker with seller-provided Hatcher association theory and Robertson-family chain-of-custody narrative.</p></div><div class="mini"><h3>Archive</h3><p>Documented in the 1911 Database as a notable Transitional Model with unverified Hatcher association.</p></div></div>
+
+<h2 id="open" class="section">Open Documentation Items</h2><section class="card note"><ul class="clean"><li>Archive the full GunBroker listing and final sale price.</li><li>Upload final web-ready photo set to the repository.</li><li>Retain close-ups of serial number, barrel markings, magazine base, and plaque.</li><li>Search Springfield Research Service records for serial number 702585.</li><li>Search Springfield Armory archival material for 1924 Transitional deliveries.</li><li>Search Hatcher family, NRA, and Robertson family papers for ownership evidence.</li><li>Document whether the Hatcher Hall plaque can be independently tied to this exact pistol.</li></ul></section>
+
+<h2 class="section">Research Notes</h2><section class="card note"><p><strong>Research method:</strong> This record separates confirmed observations from provenance claims. The Transitional Model identification and 1924 Colt production context are treated separately from the possible Hatcher ownership theory.</p><p>The current assessment is based on seller photographs and GunBroker description documenting serial number 702585, Colt Transitional Model configuration, original blue finish, two-tone magazine, H/P barrel marking, Springfield Armory delivery claim, Hatcher Hall plaque, and seller-reported Robertson family chain-of-custody narrative.</p><p><strong>Provenance caution:</strong> The possible Major General Julian S. Hatcher association is not proven by the materials reviewed. It should be treated as possible but unverified unless primary-source documentation is discovered.</p></section><section class="card note"><strong>Research Disclaimer:</strong> This record is a collector reference and research aid. It is not a factory letter, formal appraisal, final authentication, or proof of Hatcher ownership. Authenticity, originality, provenance, and value should be independently verified using complete photographs, serial references, known examples, archival records, and qualified expert review.</section>
+</main>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()"><button type="button">Close</button><img id="lightboxImg" src="" alt="Expanded pistol documentation image"></div>
+<div id="site-footer"></div>
+<script src="../header.js"></script><script src="../footer.js"></script><script>function openLightbox(src){document.getElementById('lightboxImg').src=src;document.getElementById('lightbox').classList.add('open');}function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.getElementById('lightboxImg').src='';}</script>
+</body>
+</html>
