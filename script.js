@@ -76,7 +76,9 @@ var individualRecordPages = {
     "1383505": "pistols/1383505.html",
     "1589098": "pistols/1589098.html",
     "1272220": "pistols/1272220.html",
-    "1513922": "pistols/1513922.html"
+    "1513922": "pistols/1513922.html",
+    "1403283": "pistols/1403283.html",
+    "1997691": "pistols/1997691.html"
 };
 
 function escapeHtml(value) {
