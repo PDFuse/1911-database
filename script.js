@@ -56,7 +56,27 @@ var individualRecordPages = {
     "2361085": "pistols/2361085.html",
     "2363293": "pistols/2363293.html",
     "2440064": "pistols/2440064.html",
-    "2455516": "pistols/2455516.html"
+    "2455516": "pistols/2455516.html",
+
+    "1926885": "pistols/1926885.html",
+    "1887296": "pistols/1887296.html",
+    "1311841": "pistols/1311841.html",
+    "730058": "pistols/730058.html",
+    "1754060": "pistols/1754060.html",
+    "1166186": "pistols/1166186.html",
+    "2108757": "pistols/2108757.html",
+    "1007642": "pistols/1007642.html",
+    "1833662": "pistols/1833662.html",
+    "2267082": "pistols/2267082.html",
+    "1136852": "pistols/1136852.html",
+    "714093": "pistols/714093.html",
+    "1825392": "pistols/1825392.html",
+    "1153716": "pistols/1153716.html",
+    "1129767": "pistols/1129767.html",
+    "1383505": "pistols/1383505.html",
+    "1589098": "pistols/1589098.html",
+    "1272220": "pistols/1272220.html",
+    "1513922": "pistols/1513922.html"
 };
 
 function escapeHtml(value) {
@@ -119,11 +139,11 @@ function getIndividualPageLink(input) {
     var serial = normalizeSerial(input);
 
     if (individualRecordPages[serial]) {
-        return "<p><a href='" + escapeHtml(individualRecordPages[serial]) + "?v=20260529l'>Open Individual Record →</a></p>";
+        return "<p><a href='" + escapeHtml(individualRecordPages[serial]) + "?v=20260531a'>Open Individual Record →</a></p>";
     }
 
     if (typeof pistolRecords !== "undefined" && pistolRecords[serial]) {
-        return "<p><a href='pistols/" + encodeURIComponent(serial) + ".html?v=20260529l'>Open Individual Record →</a></p>";
+        return "<p><a href='pistols/" + encodeURIComponent(serial) + ".html?v=20260531a'>Open Individual Record →</a></p>";
     }
 
     return "";
@@ -164,6 +184,11 @@ function searchDatabase() {
     });
 
     if (matches.length === 0) {
+        if (input !== "" && individualRecordPages[input]) {
+            result.innerHTML = "<div class='result-card'><h2>Individual Record Found</h2>" + getIndividualPageLink(input) + "</div>";
+            return;
+        }
+
         result.innerHTML = "<div class='warning-box'><strong>No matches found.</strong></div>";
         return;
     }
