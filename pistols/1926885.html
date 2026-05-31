@@ -3,18 +3,69 @@
 <head>
 <title>Remington Rand M1911A1 1926885 | 1911 Database</title>
 <link rel="stylesheet" href="../style.css">
-<style>body{background:#101010;color:#f5f5f5}.record{max-width:1180px;margin:auto;padding:18px}.kicker{color:#d8b86a;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.78rem}.title{font-size:clamp(2.1rem,6vw,4.5rem);line-height:.96;color:#fff}.subtitle,.note{color:#c8c8c8;line-height:1.55}.card{background:#1b1b1b;border:1px solid #333;border-radius:18px;padding:18px;margin:18px 0}.badges{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.badge{background:#263f67;color:#fff;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.84rem}.badge.gold{background:#3a3020;color:#f0d38a;border:1px solid #806b39}.row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #343434;padding:9px 0}.row span:first-child{color:#aaa}.row span:last-child{text-align:right;font-weight:800;color:#fff}.section{font-size:1.55rem;border-left:5px solid #d8b86a;padding-left:12px;margin:32px 0 14px;color:#fff}.warning{border-left:5px solid #b65b4b;background:#261b1a}</style>
+<style>
+body{background:#101010;color:#f5f5f5;}
+.record{max-width:1180px;margin:auto;padding:18px;}
+.kicker{color:#d8b86a;text-transform:uppercase;letter-spacing:.14em;font-weight:800;font-size:.78rem;margin-top:10px;}
+.title{font-size:clamp(2.25rem,7vw,4.75rem);line-height:.96;margin:.35em 0 .15em;color:#fff;}
+.subtitle{color:#bdbdbd;max-width:880px;font-size:1.08rem;line-height:1.45;margin-bottom:18px;}
+.summary{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start;margin:18px 0 18px;}
+.card{background:#1b1b1b;border:1px solid #333;border-radius:18px;padding:18px;box-shadow:0 12px 30px rgba(0,0,0,.18);}
+.card h2,.card h3{margin-top:0;color:#fff;}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 16px;}
+.badge{background:#263f67;color:#fff;border-radius:999px;padding:7px 12px;font-weight:800;font-size:.84rem;}
+.badge.gold{background:#3a3020;color:#f0d38a;border:1px solid #806b39;}
+.badge.green{background:#20372b;color:#a8e7c1;border:1px solid #3d7a58;}
+.row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #343434;padding:9px 0;}
+.row span:first-child{color:#aaa;}.row span:last-child{text-align:right;font-weight:800;color:#fff;}
+.nav{display:flex;gap:8px;overflow-x:auto;margin:12px 0 26px;padding-bottom:8px;}
+.nav a{white-space:nowrap;background:#222;border:1px solid #363636;border-radius:999px;padding:9px 13px;color:#fff;text-decoration:none;font-weight:800;font-size:.9rem;}
+.nav a:hover{border-color:#d8b86a;color:#f0d38a;}
+.grade{background:linear-gradient(180deg,#2b2418,#191919);border-color:#7f6734;}
+.stars{font-size:1.55rem;color:#f0d38a;letter-spacing:.08em;margin:2px 0 8px;}
+.grade-line{font-size:1.45rem;color:#f0d38a;font-weight:900;margin-bottom:8px;}
+.section{font-size:1.65rem;border-left:5px solid #d8b86a;padding-left:12px;margin:32px 0 14px;color:#fff;}
+.why{font-size:1.08rem;line-height:1.55;color:#ddd;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}
+.mini{background:#1b1b1b;border:1px solid #333;border-radius:16px;padding:15px;}
+.mini h3{margin:0 0 8px;color:#f0d38a;font-size:1.05rem;}.mini p{margin:0;color:#bdbdbd;line-height:1.45;}
+.table{width:100%;border-collapse:separate;border-spacing:0 8px;}
+.table td{background:#222;border:1px solid #333;padding:12px;vertical-align:top;}.table td:first-child{color:#f0d38a;font-weight:900;border-radius:10px 0 0 10px;}.table td:last-child{color:#bdbdbd;border-radius:0 10px 10px 0;}
+.scores{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;}.score{background:#222;border:1px solid #333;border-radius:14px;padding:14px;text-align:center;color:#cfcfcf;}.score strong{display:block;color:#f0d38a;font-size:1.55rem;margin-top:4px;}
+.timeline-wrap{background:#1b1b1b;border:1px solid #333;border-radius:18px;padding:18px;}.timeline-bar{position:relative;height:70px;margin:10px 8px 4px;border-bottom:3px solid #555;}.tick{position:absolute;bottom:-28px;transform:translateX(-50%);color:#aaa;font-weight:800;font-size:.9rem;}.marker{position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:#f0d38a;box-shadow:0 0 0 6px rgba(240,211,138,.18);}.marker-label{position:absolute;left:50%;top:0;transform:translateX(-50%);color:#f0d38a;font-weight:900;text-align:center;white-space:nowrap;}
+.note{color:#bdbdbd;line-height:1.55;}.note strong{color:#fff;}ul.clean{margin:0;padding-left:20px;color:#bdbdbd;line-height:1.55;}ul.clean li{margin-bottom:6px;}
+@media(max-width:850px){.record{padding:12px}.summary{grid-template-columns:1fr}.title{font-size:clamp(2rem,12vw,3.4rem)}.row{font-size:.95rem}.table,.table tbody,.table tr,.table td{display:block;width:100%}.table tr{background:#222;border:1px solid #333;border-radius:14px;margin-bottom:10px;padding:8px}.table td{border:0;background:transparent;padding:5px}.table td:first-child,.table td:last-child{border-radius:0}}
+</style>
 </head>
 <body>
 <div id="site-header"></div>
 <main class="record">
-<div class="kicker">CMP Encountered Pistol Observation</div>
+<div class="kicker">1911 Database Individual Record</div>
 <h1 class="title">Remington Rand M1911A1<br>Serial Number 1926885</h1>
-<p class="subtitle">Text-only observation record. Photos are not reproduced on this page unless image rights are confirmed.</p>
-<section class="card"><h2>Quick Summary</h2><div class="badges"><span class="badge">Remington Rand Frame</span><span class="badge">Remington Rand Slide</span><span class="badge gold">CMP Service Grade Observed</span><span class="badge">F.J.A.</span></div><div class="row"><span>Serial</span><span>1926885</span></div><div class="row"><span>Frame Manufacturer</span><span>Remington Rand</span></div><div class="row"><span>Slide Manufacturer</span><span>Remington Rand</span></div><div class="row"><span>Estimated Frame Year</span><span>1944</span></div><div class="row"><span>Serial Range Context</span><span>1890504–2075103 Remington Rand block</span></div><div class="row"><span>Inspector</span><span>F.J.A.</span></div><div class="row"><span>Rebuild Mark</span><span>None observed from supplied photos</span></div></section>
-<h2 class="section">Observed Configuration</h2><section class="card note"><p>Observed as a maker-matching Remington Rand frame and Remington Rand slide. The frame shows U.S. Property / M1911A1 U.S. Army markings and F.J.A. inspection marking. Brown checkered plastic grips were present. Barrel, magazine maker, and grip mold details were not confirmed from the supplied photos.</p></section>
-<h2 class="section">Database Classification</h2><section class="card note"><p>Classified as a <strong>Remington Rand / Remington Rand CMP encountered pistol</strong>. This is an observation record and should not be treated as proof of all-original factory configuration without further barrel, small-part, finish, and provenance review.</p></section>
-<section class="card note warning"><strong>Research Disclaimer:</strong> This record is a collector reference and research aid, not a CMP certificate, appraisal, or final authentication.</section>
+<p class="subtitle">CMP encountered Remington Rand M1911A1 observation record preserving visible markings, frame and slide configuration, rebuild-mark status, and open documentation items.</p>
+
+<div class="summary">
+<section class="card"><h2>Record Status</h2><p class="note">Photo-supported observation record. Source photographs are referenced for research use but not reproduced on this page unless image rights are confirmed.</p><div class="badges"><span class="badge">Remington Rand</span><span class="badge">M1911A1</span><span class="badge">1944</span><span class="badge green">CMP Encountered</span><span class="badge gold">Frame / Slide Match</span></div></section>
+<aside class="card"><h2>Quick Summary</h2><div class="row"><span>Serial</span><span>1926885</span></div><div class="row"><span>Frame Manufacturer</span><span>Remington Rand</span></div><div class="row"><span>Slide Manufacturer</span><span>Remington Rand</span></div><div class="row"><span>Model</span><span>M1911A1</span></div><div class="row"><span>Production Year</span><span>1944</span></div><div class="row"><span>Serial Range</span><span>1890504 - 2075103</span></div><div class="row"><span>Inspector</span><span>F.J.A.</span></div><div class="row"><span>Rebuild Marks</span><span>None observed</span></div></aside>
+</div>
+
+<nav class="nav"><a href="#grade">Assessment</a><a href="#why">Why It Matters</a><a href="#features">Features</a><a href="#score">Score</a><a href="#timeline">Timeline</a><a href="#open">Open Items</a></nav>
+
+<section id="grade" class="card grade"><h2>Collector Assessment</h2><div class="stars">★★★★☆</div><div class="grade-line">Strong CMP Encountered Remington Rand Example</div><p>Serial number 1926885 falls within the 1944 Remington Rand production block. Current observation notes show a Remington Rand frame with Remington Rand slide and F.J.A. inspection marking. No arsenal rebuild mark was observed in the supplied photos.</p><p>This should be documented as a maker-matching frame and slide example, but not called fully original until the barrel, small parts, grip backs, magazine, and finish consistency are reviewed.</p></section>
+
+<h2 id="why" class="section">Why This Pistol Matters</h2><section class="card"><p class="why">This record helps build real-world statistics for CMP encountered M1911A1 pistols. It is useful because many CMP pistols show mixed slides, replacement barrels, rebuild markings, or depot history. Serial number 1926885 provides a documented Remington Rand / Remington Rand comparison point within the observed dataset.</p></section>
+
+<h2 id="features" class="section">Component Review</h2><table class="table"><tr><td>Frame</td><td>Remington Rand frame by serial range, serial number 1926885.</td></tr><tr><td>Slide</td><td>Remington Rand slide observed with Syracuse, New York address marking.</td></tr><tr><td>Inspector</td><td>F.J.A. inspection mark observed, consistent with Remington Rand production context.</td></tr><tr><td>Finish</td><td>Parkerized service finish observed. Originality requires further review under consistent lighting.</td></tr><tr><td>Grips</td><td>Brown checkered plastic grips observed. Grip maker and mold style not confirmed without rear-side photographs.</td></tr><tr><td>Barrel</td><td>Not confirmed from the supplied photo set.</td></tr><tr><td>Magazine</td><td>Not confirmed from the supplied photo set.</td></tr><tr><td>Rebuild Marks</td><td>No arsenal rebuild mark observed from available photos. This does not prove the pistol was never rebuilt.</td></tr></table>
+
+<h2 id="score" class="section">Observation Scorecard</h2><div class="scores"><div class="score">Frame ID<strong>10/10</strong></div><div class="score">Slide ID<strong>10/10</strong></div><div class="score">Inspector<strong>9/10</strong></div><div class="score">Barrel<strong>0/10</strong></div><div class="score">Grips<strong>6/10</strong></div><div class="score">Rebuild Check<strong>7/10</strong></div></div><p class="note">Preliminary documentation score: <strong>42/60</strong>. This score reflects documentation completeness, not market value.</p>
+
+<h2 id="timeline" class="section">WWII Production Marker</h2><section class="timeline-wrap"><p class="note">Serial number 1926885 sits inside the 1944 Remington Rand production block used by this database.</p><div class="timeline-bar"><div class="marker-label">1926885<br>1944</div><div class="marker"></div><span class="tick" style="left:0%">1943</span><span class="tick" style="left:50%">1944</span><span class="tick" style="left:100%">1945</span></div></section>
+
+<h2 class="section">Production and Historical Context</h2><div class="cards"><div class="mini"><h3>Production</h3><p>Remington Rand was the largest WWII producer of M1911A1 pistols.</p></div><div class="mini"><h3>Inspector</h3><p>F.J.A. refers to Frank J. Atwood, associated with Remington Rand and Ithaca inspection context.</p></div><div class="mini"><h3>CMP Context</h3><p>CMP pistols often reflect long service lives, storage history, rebuild work, and parts replacement.</p></div><div class="mini"><h3>Collector Use</h3><p>This example helps compare maker-matching and mixed CMP encountered pistols.</p></div></div>
+
+<h2 id="open" class="section">Open Documentation Items</h2><section class="card"><ul class="clean"><li>Photograph barrel markings and barrel lugs.</li><li>Photograph magazine baseplate and feed lips.</li><li>Photograph grip backs for maker or mold identification.</li><li>Confirm top-of-slide and frame proof marks.</li><li>Confirm whether any rebuild marks exist under better lighting.</li></ul></section>
+
+<section class="card note"><strong>Research Disclaimer:</strong> This record is a collector reference and research aid, not a CMP certificate, appraisal, or final authentication.</section>
 </main>
 <div id="site-footer"></div>
 <script src="../header.js"></script><script src="../footer.js"></script>
