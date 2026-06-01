@@ -20,6 +20,7 @@ var individualRecordPages = {
     "501": "pistols/501.html",
     "538": "pistols/538.html",
     "5461": "pistols/5461.html",
+    "16743": "pistols/16743.html",
     "120040": "pistols/120040.html",
     "369379": "pistols/369379.html",
     "388733": "pistols/388733.html",
@@ -28,32 +29,46 @@ var individualRecordPages = {
     "707356": "pistols/707356.html",
     "817679": "pistols/817679.html",
     "861420": "pistols/861420.html",
+    "883104": "pistols/883104.html",
+    "898459": "pistols/898459.html",
     "898473": "pistols/898473.html",
     "1012841": "pistols/1012841.html",
+    "1013380": "pistols/1013380.html",
     "1068267": "pistols/1068267.html",
     "1080894": "pistols/1080894.html",
+    "1207693": "pistols/1207693.html",
+    "1233243": "pistols/1233243.html",
     "1261933": "pistols/1261933.html",
     "1293239": "pistols/1293239.html",
     "1319373": "pistols/1319373.html",
     "1354259": "pistols/1354259.html",
+    "1358930": "pistols/1358930.html",
     "1403897": "pistols/1403897.html",
     "1450575": "pistols/1450575.html",
     "1656078": "pistols/1656078.html",
+    "1685626": "pistols/1685626.html",
     "1686209": "pistols/1686209.html",
     "1743768": "pistols/1743768.html",
     "1747777": "pistols/1747777.html",
     "1792084": "pistols/1792084.html",
+    "1792202": "pistols/1792202.html",
+    "1799472": "pistols/1799472.html",
     "1828605": "pistols/1828605.html",
     "1854428": "pistols/1854428.html",
+    "1872269": "pistols/1872269.html",
+    "1911367": "pistols/1911367.html",
     "1935389": "pistols/1935389.html",
+    "2042609": "pistols/2042609.html",
     "2064577": "pistols/2064577.html",
     "2121722": "pistols/2121722.html",
     "2132641": "pistols/2132641.html",
     "2174401": "pistols/2174401.html",
     "2309527": "pistols/2309527.html",
+    "2326274": "pistols/2326274.html",
     "2335201": "pistols/2335201.html",
     "2361085": "pistols/2361085.html",
     "2363293": "pistols/2363293.html",
+    "2394700": "pistols/2394700.html",
     "2440064": "pistols/2440064.html",
     "2455516": "pistols/2455516.html",
 
@@ -148,11 +163,11 @@ function getIndividualPageLink(input) {
     var serial = normalizeSerial(input);
 
     if (individualRecordPages[serial]) {
-        return "<p><a href='" + escapeHtml(individualRecordPages[serial]) + "?v=20260531b'>Open Individual Record →</a></p>";
+        return "<p><a href='" + escapeHtml(individualRecordPages[serial]) + "?v=20260531c'>Open Individual Record →</a></p>";
     }
 
     if (typeof pistolRecords !== "undefined" && pistolRecords[serial]) {
-        return "<p><a href='pistols/" + encodeURIComponent(serial) + ".html?v=20260531b'>Open Individual Record →</a></p>";
+        return "<p><a href='pistols/" + encodeURIComponent(serial) + ".html?v=20260531c'>Open Individual Record →</a></p>";
     }
 
     return "";
